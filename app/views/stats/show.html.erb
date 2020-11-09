@@ -1,0 +1,7 @@
+<h1>Stat Information</h1>
+<h3>User: <%= @stat.user %></h3>
+<h3>Exercise: <%= @stat.exercise %></h3>
+<h3>Time (if applicable): <%= @stat.time %></h3>
+<h3>Weight (if applicable): <%= @stat.weight %></h3>
+<h3>Comment: <%= @stat.comment %></h3>
+<%= button_to "Edit Stat", edit_stat_path(@stat), method: :get %>

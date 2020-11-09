@@ -1,0 +1,6 @@
+<h1>All Personal Records:</h1>
+<h3><% @stats.each do |stat|  %>
+Exercise:<% link_to stat.exercise.name, stat_path(stat) %> - 
+Name: <%= link_to stat.user.name, user_path(stat.user) %> <br>
+<% end%>
+</h3>
