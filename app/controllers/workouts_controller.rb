@@ -11,15 +11,13 @@ class WorkoutsController < ApplicationController
     end
 
     def new
+        # byebug
         @workout = Workout.new 
-        @users = User.all
-        5.times do 
-            @workout.exercises.build
-        end
         render :new 
     end
 
     def create
+        #byebug
         workout = Workout.create(workout_params)
         if workout.valid?
             redirect_to workout_path(workout)
@@ -51,7 +49,7 @@ class WorkoutsController < ApplicationController
     private
 
     def workout_params
-        params.require(:workout).permit(:date, :time, :type, exercises_attributes: [])
+        params.require(:workout).permit(:date, :time, :type)
     end
 
     def set_workout
