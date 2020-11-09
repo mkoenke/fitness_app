@@ -1,4 +1,4 @@
-class JoinsController < ApplicationController
+class ExerciseWorkoutsController < ApplicationController
     before_action :set_join, only: [:show, :edit, :update, :destroy]
 
     def index

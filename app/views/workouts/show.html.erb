@@ -9,7 +9,7 @@
 <% @workout.exercises.each do |x| %>
     <strong><%= x.name %><br>
     <%# move logic to model%>
-    <%= x.joins.find {|join| join.workout == @workout}.sets %> sets, <%= x.joins.find {|join| join.workout == @workout}.reps %> reps</strong><br>
+    <%= x.exercise_workouts.find {|join| join.workout == @workout}.sets %> sets, <%= x.exercise_workouts.find {|join| join.workout == @workout}.reps %> reps</strong><br>
     <%= x.description %><br>
     <%= x.video %><br><br>
 <% end %>

@@ -1,6 +1,6 @@
 class Exercise < ApplicationRecord
-    has_many :joins
+    has_many :exercise_workouts
     has_many :stats
-    has_many :workouts, through: :joins 
+    has_many :workouts, through: :exercise_workouts 
     has_many :users, through: :stats 
 end

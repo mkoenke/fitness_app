@@ -22,19 +22,19 @@ ActiveRecord::Schema.define(version: 2020_11_09_162116) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "exercises", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "video"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "joins", force: :cascade do |t|
+  create_table "exercise_workouts", force: :cascade do |t|
     t.string "workout_id"
     t.string "exercise_id"
     t.integer "reps"
     t.integer "sets"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "video"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

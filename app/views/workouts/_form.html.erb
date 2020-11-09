@@ -16,5 +16,17 @@
     <%= f.label :user_id %><br>
     <%= f.collection_select :user_id, User.all, :id, :name %><br>
 
+    <%= f.collection_check_boxes(:exercise_ids, Exercise.all, :id, :name) do |b| %>
+        <%= b.check_box %><%= b.label {b.text} %><br>
+    <%= f.fields_for :exercise_workouts, @workout.exercise_workouts.build do |j|%>
+        <%= j.label :sets %>
+        <%= j.number_field :sets %>
+        <%= j.label :reps %>
+        <%= j.number_field :reps %><br>
+        <%= j.hidden_field :exercise_id, value: b.object.id %>
+        <%= j.hidden_field :workout_id, value: @workout.id %>
+    <% end %>
+    <% end %>
+
     <%= f.submit %>
 <% end %>
