@@ -1,0 +1,5 @@
+<h1>Exercises</h1>
+
+<% @exercises.each do |x| %>
+    <%= link_to x.name, exercise_path(x) %><br>
+<% end %>

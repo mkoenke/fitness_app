@@ -1,0 +1,31 @@
+<%= form_for @workout do |f| %>
+    <%= f.label "Title" %><br>
+    <%= f.text_field :kind %><br>
+
+    <%= f.label :date %><br>
+    <%= f.date_field :date %><br>
+    
+    <%= f.label :time %><br>
+    <%= f.time_field :time %><br>
+    
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_id, @users, :id, :name %><br>
+
+    <%= f.fields_for :exercises do |x| %>
+        <%= x.label :exercise %><br>
+        <%= x.collection_select :name, Exercise.all, :id, :name %><br>
+        <%= form_for :joins do |j| %>
+            <%= j.hidden_field :workout_id %>
+            <%= j.hidden_field :exercise_id %>
+            <%= j.label :reps %>
+            <%= j.number_field :reps%>
+            <%= j.label :sets %>
+            <%= j.number_field :sets%>
+        <% end %>
+    <% end %>
+
+
+    
+
+    <%= f.submit %>
+<% end %>

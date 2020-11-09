@@ -12,6 +12,10 @@ class WorkoutsController < ApplicationController
 
     def new
         @workout = Workout.new 
+        @users = User.all
+        5.times do 
+            @workout.exercises.build
+        end
         render :new 
     end
 
@@ -26,6 +30,7 @@ class WorkoutsController < ApplicationController
     end
 
     def edit
+        @users = User.all
         render :edit 
     end
 

@@ -1,0 +1,17 @@
+<h1><%= @workout.kind %></h1>
+
+<h3>Created By: <%= link_to @workout.user.name, user_path(@workout.user) %></h3>
+
+<h3>Date: <%= @workout.date %></h3>
+<h3>Time: <%= @workout.time %></h3>
+
+<h3>Exercises:</h3>
+<% @workout.exercises.each do |x| %>
+    <strong><%= x.name %><br>
+    <%# move logic to model%>
+    <%= x.joins.find {|join| join.workout == @workout}.sets %> sets, <%= x.joins.find {|join| join.workout == @workout}.reps %> reps</strong><br>
+    <%= x.description %><br>
+    <%= x.video %><br><br>
+<% end %>
+
+<%= button_to "Delete Workout", workout_path(@workout), method: :delete %>
