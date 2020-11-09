@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_160705) do
+ActiveRecord::Schema.define(version: 2020_11_09_162116) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "date"
@@ -18,12 +18,23 @@ ActiveRecord::Schema.define(version: 2020_11_09_160705) do
     t.integer "workout_id"
     t.integer "user_id"
     t.string "location"
-ActiveRecord::Schema.define(version: 2020_11_09_162116) do
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "video"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "joins", force: :cascade do |t|
+    t.string "workout_id"
+    t.string "exercise_id"
+    t.integer "reps"
+    t.integer "sets"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,11 +45,6 @@ ActiveRecord::Schema.define(version: 2020_11_09_162116) do
     t.integer "weight"
     t.float "time"
     t.string "comment"
-  create_table "joins", force: :cascade do |t|
-    t.string "workout_id"
-    t.string "exercise_id"
-    t.integer "reps"
-    t.integer "sets"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,10 +54,15 @@ ActiveRecord::Schema.define(version: 2020_11_09_162116) do
     t.string "password"
     t.string "name"
     t.integer "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "workouts", force: :cascade do |t|
     t.date "date"
     t.time "time"
     t.string "kind"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
