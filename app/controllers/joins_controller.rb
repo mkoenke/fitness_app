@@ -11,7 +11,7 @@ class JoinsController < ApplicationController
     end
 
     def new
-        @workout = Workout.new 
+        @join = Join.new 
         render :new 
     end
 
@@ -31,15 +31,15 @@ class JoinsController < ApplicationController
 
     def update
         if @join.update(join_params)
-            redirect_to join_path(join)
+            redirect_to join_path(@join)
         else
-            flash[:errors] = join.errors.full_messages
+            flash[:errors] = @join.errors.full_messages
             redirect_to edit_join_path
         end
     end
 
     def destroy
-        @workout.destroy 
+        @join.destroy 
         redirect_to joins_path
     end
 

@@ -31,9 +31,9 @@ class WorkoutsController < ApplicationController
 
     def update
         if @workout.update(workout_params)
-            redirect_to workout_path(workout)
+            redirect_to workout_path(@workout)
         else
-            flash[:errors] = workout.errors.full_messages
+            flash[:errors] = @workout.errors.full_messages
             redirect_to edit_workout_path
         end
     end

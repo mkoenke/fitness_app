@@ -11,7 +11,7 @@ class ExercisesController < ApplicationController
     end
 
     def new
-        @exercises = Exercise.new 
+        @exercise = Exercise.new 
         render :new 
     end
 
@@ -31,9 +31,9 @@ class ExercisesController < ApplicationController
 
     def update
         if @exercise.update(exercise_params)
-            redirect_to exercise_path(exercise)
+            redirect_to exercise_path(@exercise)
         else
-            flash[:errors] = exercise.errors.full_messages
+            flash[:errors] = @exercise.errors.full_messages
             redirect_to edit_exercise_path
         end
     end
