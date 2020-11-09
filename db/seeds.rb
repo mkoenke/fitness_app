@@ -33,9 +33,9 @@ puts "Exercises seeded"
 
 legday = Workout.create!(date: Date.new(2020, 3, 8) , time: Time.now , kind: "Legs", user_id: mary.id)
 armday = Workout.create!(date: Date.new(2020, 3, 6) , time: Time.now , kind: "Arms", user_id: angie.id)
-shoulderday = Workout.create!(date: Date.new(2020, 3, 4) , time: Time.now , kind: "Shoulders")
-gluteday = Workout.create!(date: Date.new(2020, 2, 7) , time: Time.now , kind: "Glutes")
-abday = Workout.create!(date: Date.new(2020, 2, 5) , time: Time.now , kind: "Abs")
+shoulderday = Workout.create!(date: Date.new(2020, 3, 4) , time: Time.now , kind: "Shoulders", user_id: mary.id)
+gluteday = Workout.create!(date: Date.new(2020, 2, 7) , time: Time.now , kind: "Glutes", user_id: angie.id)
+abday = Workout.create!(date: Date.new(2020, 2, 5) , time: Time.now , kind: "Abs", user_id: mary.id)
 
 puts "Workouts seeded"
 
@@ -44,8 +44,8 @@ Stat.create!(user_id: angie.id, exercise_id: mile.id , time: 8.5, comment: "Fast
 puts "Stats seeded"
 
 
-Appointment.create!(date: 2020-11-9, time: 05:30:00, workout_id: legday.id, user_id: mary.id, location: "In my garage" )
-Appointment.create!(date: 2020-11-10, time: 11:30:00, workout_id: abday.id, user_id: angie.id, location: "Mid City Gym" )
+Appointment.create!(date: Date.new(2020, 3, 8), time: Time.now, workout_id: legday.id, user_id: mary.id, location: "In my garage" )
+Appointment.create!(date: Date.new(2020, 3, 8), time: Time.now, workout_id: abday.id, user_id: angie.id, location: "Mid City Gym" )
 puts "Appointments seeded"
 
 
