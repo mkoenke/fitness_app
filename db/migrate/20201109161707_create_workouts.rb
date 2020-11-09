@@ -3,7 +3,7 @@ class CreateWorkouts < ActiveRecord::Migration[6.0]
     create_table :workouts do |t|
       t.date :date
       t.time :time
-      t.string :type
+      t.string :kind
       t.timestamps
     end
   end
