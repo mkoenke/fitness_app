@@ -7,38 +7,47 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 puts "Destroying Users"
+Exercise.destroy_all
+puts "Destroying Exercises"
+Workout.destroy_all
+puts "Destroying Workouts"
 Stat.destroy_all
 puts "Destroying Stats"
 Appointment.destroy_all
 puts "Destroying Appointments"
+Join.destroy_all
+puts "Destroying Joins"
+
 
 mary = User.create!(name: "Mary Koenke", age: 35, username: "mkoenke", password: "mkoenke")
 angie = User.create!(name: "Angelina Ramos", age: 11, username: "angie", password: "angie")
 puts "Users seeded"
-Stat.create!(user_id: mary.id, exercise_id: ______ , weight: 260, comment: "Double Bodyweight Backsquat! Yay!")
-Stat.create!(user_id: angie.id, exercise_id: ______ , time: 8.5, comment: "Fastest Mile Run! Yay!")
+
+sumo = Exercise.create!(name:"Sumo Deadlift", description:"fake description", video:"video here" )
+bicep = Exercise.create!(name:"Bicep Curl", description:"fake description", video:"video here" )
+pushup = Exercise.create!(name:"Push ups", description: "fake description", video: "video here")
+squat = Exercise.create!(name:"Barbell Back Squat", description: "fake description", video: "video here")
+highknees = Exercise.create!(name:"High Knees", description:"fake description", video: "video here")
+mile = Exercise.create!(name:"Mile Run", description:"fake description", video: "video here")
+puts "Exercises seeded"
+
+legday = Workout.create!(date: Date.new(2020, 3, 8) , time: Time.now , kind: "Legs", user_id: mary.id)
+armday = Workout.create!(date: Date.new(2020, 3, 6) , time: Time.now , kind: "Arms", user_id: angie.id)
+shoulderday = Workout.create!(date: Date.new(2020, 3, 4) , time: Time.now , kind: "Shoulders")
+gluteday = Workout.create!(date: Date.new(2020, 2, 7) , time: Time.now , kind: "Glutes")
+abday = Workout.create!(date: Date.new(2020, 2, 5) , time: Time.now , kind: "Abs")
+
+puts "Workouts seeded"
+
+Stat.create!(user_id: mary.id, exercise_id: squat.id , weight: 260, comment: "Double Bodyweight Backsquat! Yay!")
+Stat.create!(user_id: angie.id, exercise_id: mile.id , time: 8.5, comment: "Fastest Mile Run! Yay!")
 puts "Stats seeded"
-Appointment.create!(date: 2020-11-9, time: 05:30:00, workout_id: ____, user_id: mary.id, location: "In my garage" )
-Appointment.create!(date: 2020-11-10, time: 11:30:00, workout_id: ____, user_id: angie.id, location: "Mid City Gym" )
+
+
+Appointment.create!(date: 2020-11-9, time: 05:30:00, workout_id: legday.id, user_id: mary.id, location: "In my garage" )
+Appointment.create!(date: 2020-11-10, time: 11:30:00, workout_id: abday.id, user_id: angie.id, location: "Mid City Gym" )
 puts "Appointments seeded"
 
-Join.destroy_all 
-Workout.destroy_all
-Exercise.destroy_all 
-
-
-    Exercise.create!(name:"Sumo Deadlift", description:"fake description", video:"video here" )
-    Exercise.create!(name:"Bicep Curl", description:"fake description", video:"video here" )
-    Exercise.create!(name:"Push ups", description: "fake description", video: "video here")
-    Exercise.create!(name:"Barbell Back Squat", description: "fake description", video: "video here")
-    Exercise.create!(name:"High Knees", description:"fake description", video: "video here")
-
-    Workout.create!(date: Date.new(2020, 3, 8) , time: Time.now , kind: "Legs")
-    Workout.create!(date: Date.new(2020, 3, 6) , time: Time.now , kind: "Arms")
-    Workout.create!(date: Date.new(2020, 3, 4) , time: Time.now , kind: "Shoulders")
-    Workout.create!(date: Date.new(2020, 2, 7) , time: Time.now , kind: "Glutes")
-    Workout.create!(date: Date.new(2020, 2, 5) , time: Time.now , kind: "Abs")
-    Workout.create!(date: Date.new(2020, 2, 3) , time: Time.now , kind: "Legs")
 
     Join.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
     Join.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
