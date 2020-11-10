@@ -59,6 +59,11 @@ powersnatch = Exercise.create!(name:"Power Snatch", description:"Snatch with cat
 btnjerk = Exercise.create!(name:"Behind-the-Neck Jerk", description:"Jerk with barbell starting in a back rack", video:"https://www.youtube.com/watch?v=Ha4DQHn8UD8" )
 pcpp = Exercise.create!(name:"Power Clean Push Press", description: "Clean with catch above parallel into accelerated overhead press", video: "https://www.youtube.com/watch?v=M2ZuTBjR2I4")
 
+bench = Exercise.create!(name:"Bench Press", description:"Competition barbell bench press", video: "https://www.youtube.com/watch?v=gRVjAtPip0Y")
+dumbellpress = Exercise.create!(name:"Incline Dumbell Press", description:"Press with dumbells on a seated incline", video:"https://www.youtube.com/watch?v=8iPEnn-ltC8" )
+cablefly = Exercise.create!(name:"Incline Bench Cable Fly", description: "Seated incline with resistance cables", video: "https://www.youtube.com/watch?v=GtHNC-5GtR0")
+pullover = Exercise.create!(name:"Incline Dumbell Pullovers", description: "Seated incline with dumbell", video: "https://www.youtube.com/watch?v=JRZ3K9eYCBM")
+
 
 puts "Exercises seeded"
 
