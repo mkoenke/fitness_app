@@ -3,7 +3,14 @@
 <h3>Age: <%= @user.age %></h3>
 <h3>Username: <%= @user.username %></h3>
 <h3>Password: <%= @user.password %></h3>
-<h3>Workouts: <% @user.workouts.each do |workout|%>
-<%= workout.kind %>
-<% end%></h3>
 <%= button_to "Edit Profile", edit_user_path(@user), method: :get %>
+<h3>Scheduled Workouts:</h3>
+<%= month_calendar events: @appointments do |date, appointments| %>
+  <%= date %>
+
+  <% appointments.each do |appointment| %>
+    <div>
+      Workout: <%= appointment.workout.kind %> <br>   Location: <%= appointment.location%>
+    </div>
+  <% end %>
+<% end %>
