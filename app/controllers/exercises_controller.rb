@@ -8,8 +8,6 @@ class ExercisesController < ApplicationController
 
     def show
         render :show 
-        @video_id = @exercise.video
-        # byebug
     end
 
     def new
