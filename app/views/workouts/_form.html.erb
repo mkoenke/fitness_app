@@ -1,21 +1,21 @@
 <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Olympic Weightlifting", name: :olympic%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Arms/Shoulders", name: :arms%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Legs", name: :legs%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Chest", name: :chest %>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Back", name: :back%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "All", name: :all%>
-        <% end %>
+    <%= submit_tag "Olympic Weightlifting", name: :olympic%>
+<% end %>
+<%= form_tag new_workout_path, method: :get do %>
+    <%= submit_tag "Arms/Shoulders", name: :arms%>
+<% end %>
+<%= form_tag new_workout_path, method: :get do %>
+    <%= submit_tag "Legs", name: :legs%>
+<% end %>
+<%= form_tag new_workout_path, method: :get do %>
+    <%= submit_tag "Chest", name: :chest %>
+<% end %>
+<%= form_tag new_workout_path, method: :get do %>
+    <%= submit_tag "Back", name: :back%>
+<% end %>
+<%= form_tag new_workout_path, method: :get do %>
+    <%= submit_tag "All", name: :all%>
+<% end %>
 
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
