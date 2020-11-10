@@ -25,7 +25,7 @@ puts "Users seeded"
 
 backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"https://www.youtube.com/watch?v=emfzIfOSkKc" )
 frontsquat = Exercise.create!(name:"Front Squat", description:"Weighted squat with barbell on front rack", video:"https://www.youtube.com/watch?v=lNJ3DyibYZQ" )
-splitsquat = Exercise.create!(name:"Bulgarian Split Squats", description: "Weighted squat with barbell and rear foot elevated", video: "vhttps://www.youtube.com/watch?v=W5H-0DMiclY")
+splitsquat = Exercise.create!(name:"Bulgarian Split Squats", description: "Weighted squat with barbell and rear foot elevated", video: "https://www.youtube.com/watch?v=W5H-0DMiclY")
 deadlift = Exercise.create!(name:"Conventional Deadlift", description: "Weighted barbell pull with feet hips width distance", video: "https://www.youtube.com/watch?v=op9kVnSso6Q")
 romaniandl = Exercise.create!(name:"Romanian Deadlift", description:"Stiff-legged deadlift starting from top of the pull", video: "https://www.youtube.com/watch?v=lNJ3DyibYZQ")
 calf = Exercise.create!(name:"Calf Raises", description:"Exercise to target calf muscles", video: "https://www.youtube.com/watch?v=c5Kv6-fnTj8")
@@ -34,8 +34,30 @@ kettlebell = Exercise.create!(name:"Kettle Bell Swings", description:"Swing with
 lunges = Exercise.create!(name:"Barbell Lunges", description: "Lunges weighted with barbell", video: "https://www.youtube.com/watch?v=RL0kxD6cpz4")
 glutebridge = Exercise.create!(name:"Weighted Glute Bridge", description: "Weighted hip thrust to target glutes", video: "https://www.youtube.com/watch?v=QW1ROB4IUIA")
 
+
 bicep = Exercise.create!(name:"Bicep Curl", description:"Curl with dumbell to target bicep", video: "https://www.youtube.com/watch?v=uO_CNYidOw0")
 shoulderpress = Exercise.create!(name:"Shoulder Press", description:"Overhead press to target deltoids", video: "https://www.youtube.com/watch?v=B-aVuyhvLHU")
+arnoldpress = Exercise.create!(name:"Arnold Press", description: "Dumbell press with shoulder rotation", video: "https://www.youtube.com/watch?v=odhXwoS3mDA")
+miliatrypress = Exercise.create!(name:"Military Press", description:"Strict overhead press with barbell", video: "https://www.youtube.com/watch?v=Cjq9wf9XnX0")
+dips = Exercise.create!(name:"Dips", description:"Movement to target tricep", video: "https://www.youtube.com/watch?v=0326dy_-CzM")
+lateralraise = Exercise.create!(name:"Lateral Raise", description:"Dumbell raises to the side to target deltoids", video:"https://www.youtube.com/watch?v=kDqklk1ZESo" )
+pushups = Exercise.create!(name:"Pushups", description: "Bodyweight exercise to target triceps and back", video: "https://www.youtube.com/watch?v=_l3ySVKYVJ8")
+pushpress = Exercise.create!(name:"Push Press", description: "Barbell overhead press with a dip for acceleration", video: "https://www.youtube.com/watch?v=tmf3bvsoiG8")
+
+
+cleanandjerk = Exercise.create!(name:"Clean and Jerk", description:"Dynamic competitive Olympic weightlifting movement", video:"hhttps://www.youtube.com/watch?v=c3YeE0eckyQ" )
+clean = Exercise.create!(name:"Clean", description:"Complex movement with barbell starting from pull off the floor to catch in a front squat", video:"https://www.youtube.com/watch?v=wNrjaPvKbdQ" )
+splitjerk = Exercise.create!(name:"Split Jerk", description: "Complex movement from front rack to overhead catch", video: "https://www.youtube.com/watch?v=BIfjXjsVihM")
+snatch = Exercise.create!(name:"Snatch", description: "Dynamic competitive Olympic weightlifting movement", video: "https://www.youtube.com/watch?v=a-9wjip7Yg0")
+highhangclean = Exercise.create!(name:"High Hang Cleans", description:"Clean starting from a high hang", video: "https://www.youtube.com/watch?v=gZ_rXQtgdTc")
+highhangsnatch = Exercise.create!(name:"High Hang Snatch", description:"Snatch starting from a high hang", video: "https://www.youtube.com/watch?v=YLVYzO3P52I")
+cleanhighpull = Exercise.create!(name:"Clean High Pulls", description:"Clean grip pull from the floor to chest height", video:"https://www.youtube.com/watch?v=fidmSMSa_Ag" )
+snatchhighpull = Exercise.create!(name:"Snatch High Pulls", description:"Snatch grip pull from the floor to chest height", video:"https://www.youtube.com/watch?v=WXoIHlJ7u4s" )
+balance = Exercise.create!(name:"Snatch Balance", description: "Weighted barbell on back with dip and drive to catch in overhead squat", video: "https://www.youtube.com/watch?v=D5BUtMk0INY")
+powerclean = Exercise.create!(name:"Power Clean", description: "Clean with catch above parallel", video: "https://www.youtube.com/watch?v=-RX9YvX8ZOg")
+powersnatch = Exercise.create!(name:"Power Snatch", description:"Snatch with catch above parallel", video:"https://www.youtube.com/watch?v=lAIqwzxS3pc" )
+btnjerk = Exercise.create!(name:"Behind-the-Neck Jerk", description:"Jerk with barbell starting in a back rack", video:"https://www.youtube.com/watch?v=Ha4DQHn8UD8" )
+pcpp = Exercise.create!(name:"Power Clean Push Press", description: "Clean with catch above parallel into accelerated overhead press", video: "https://www.youtube.com/watch?v=M2ZuTBjR2I4")
 
 
 puts "Exercises seeded"
