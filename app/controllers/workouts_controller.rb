@@ -34,7 +34,6 @@ class WorkoutsController < ApplicationController
     end
 
     def create
-        byebug
         workout = Workout.create(workout_params)
         if workout.valid?
             redirect_to workout_path(workout)
