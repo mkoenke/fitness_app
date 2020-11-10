@@ -6,11 +6,11 @@
 <%= button_to "Edit Profile", edit_user_path(@user), method: :get %>
 <h3>Scheduled Workouts:</h3>
 <%= month_calendar events: @appointments do |date, appointments| %>
-  <%= date %>
+  <%= date.strftime("%m/%d/%Y") %>
 
   <% appointments.each do |appointment| %>
     <div>
-      Workout: <%= appointment.workout.kind %> <br>   Location: <%= appointment.location%>
+      Workout: <%= link_to appointment.workout.kind, workout_path(appointment.workout) %> <br>   Location: <%= appointment.location%>
     </div>
   <% end %>
 <% end %>

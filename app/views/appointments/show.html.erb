@@ -2,7 +2,7 @@
 <h3>Date: <%= @appointment.parsed_date %></h3>
 <h3>Time: <%= @appointment.parsed_time %></h3>
 <h3>Workout: <%= @appointment.workout.kind %></h3>
-<h3>User: <%= @appointment.user.name %></h3>
+<h3>User: <%= link_to @appointment.user.name, user_path(@appointment.user) %></h3>
 <h3>Location: <%= @appointment.location %></h3>
 
 <%# button_to "Edit Appointment", edit_appointmemt_path(@appointment), method: :get %> 
