@@ -37,6 +37,7 @@
     
     <%= f.fields_for :exercise_workouts do |f| %>
         <%= f.label :exercise_id %>
+        <%= select_tag "category", options_from_collection_for_select(@exercises, :category, :category), :onchange => "this.form.submit();"%>
         <%= f.collection_select :exercise_id, @exercises, :id, :name, prompt: true%>
         <%= f.label :sets %>
         <%= f.number_field :sets %>

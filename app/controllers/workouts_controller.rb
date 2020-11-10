@@ -15,7 +15,7 @@ class WorkoutsController < ApplicationController
         5.times do 
             @workout.exercise_workouts.build 
         end
-        if params[:legs]
+        if params[:legs] || params[:category] == "Legs"
             @exercises = Exercise.where(category: "Legs")
         elsif params[:arms]
             @exercises = Exercise.where(category: "Arms/Shoulders")
@@ -34,6 +34,7 @@ class WorkoutsController < ApplicationController
     end
 
     def create
+        #byebug
         workout = Workout.create(workout_params)
         if workout.valid?
             redirect_to workout_path(workout)
@@ -64,7 +65,7 @@ class WorkoutsController < ApplicationController
     private
 
     def workout_params
-        params.require(:workout).permit(:date, :time, :kind, :user_id, exercise_workouts_attributes: [:sets, :reps, :exercise_id, :workout_id, :_destroy])
+        params.require(:workout).permit(:date, :time, :kind, :user_id, :category, exercise_workouts_attributes: [:sets, :reps, :exercise_id, :workout_id, :_destroy])
     end
 
     def set_workout
