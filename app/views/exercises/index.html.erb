@@ -1,5 +1,27 @@
 <h1>Exercises</h1>
 
-<% @exercises.each do |x| %>
+<h3>Olympic Weightlifting: </h3>
+<% @exercises.where(category: "Olympic Weightlifting").each do |x| %>
+    <%= link_to x.name, exercise_path(x) %><br>
+<% end %>
+
+<h3>Legs: </h3>
+<% @exercises.where(category: "Legs").each do |x| %>
+    <%= link_to x.name, exercise_path(x) %><br>
+<% end %>
+
+<h3>Arms/Shoulders: </h3>
+<% @exercises.where(category: "Arms/Shoulders").each do |x| %>
+    <%= link_to x.name, exercise_path(x) %><br>
+<% end %>
+
+
+<h3>Chest: </h3>
+<% @exercises.where(category: "Chest").each do |x| %>
+    <%= link_to x.name, exercise_path(x) %><br>
+<% end %>
+
+<h3>Back: </h3>
+<% @exercises.where(category: "Back").each do |x| %>
     <%= link_to x.name, exercise_path(x) %><br>
 <% end %>
