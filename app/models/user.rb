@@ -5,6 +5,6 @@ class User < ApplicationRecord
     has_many :workouts, through: :appointments
     has_many :exercises, through: :stats
 
-    #has_secure_password
+    has_secure_password
  
 end
