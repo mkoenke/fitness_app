@@ -11,9 +11,24 @@ class WorkoutsController < ApplicationController
     end
 
     def new
-        @workout = Workout.new
+        @workout = Workout.new  
         5.times do 
-            @workout.exercise_workouts.build
+            @workout.exercise_workouts.build 
+        end
+        if params[:legs]
+            @exercises = Exercise.where(category: "Legs")
+        elsif params[:arms]
+            @exercises = Exercise.where(category: "Arms/Shoulders")
+        elsif params[:olympic]
+            @exercises = Exercise.where(category: "Olympic Weightlifting")
+        elsif params[:chest]
+            @exercises = Exercise.where(category: "Chest")
+        elsif params[:back]
+            @exercises = Exercise.where(category: "Back")
+        elsif params[:all]
+            @exercises = Exercise.all
+        else 
+            @exercises = Exercise.all  
         end
         render :new 
     end

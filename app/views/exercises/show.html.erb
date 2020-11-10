@@ -1,5 +1,9 @@
 <h1><%= @exercise.name %></h1>
 
+<h3>Class: <%= @exercise.category %></h3>
+
 <p><%= @exercise.description %></p>
 
 <iframe width="764" height="573" src=<%= @exercise.video %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<%= button_to "Delete Exercise", exercise_path(@exercise), method: :delete %>
