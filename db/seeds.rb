@@ -71,7 +71,6 @@ pulldowns = Exercise.create!(name:"Lat Pull Downs", description:"Overhead pulldo
 backextension = Exercise.create!(name:"Back Extensions", description: "Starting from folded over position using back and glutes to raise body", video: "https://www.youtube.com/watch?v=ph3pddpKzzw")
 goodmorning = Exercise.create!(name:"Good Mornings", description: "Barbell movement from standing to L shape forward fold and back to standing", video: "https://www.youtube.com/watch?v=YA-h3n9L4YU")
 
-
 puts "Exercises seeded"
 
 legday = Workout.create!(date: Date.new(2020, 3, 8) , time: Time.now , kind: "Legs", user_id: mary.id)
@@ -82,20 +81,18 @@ abday = Workout.create!(date: Date.new(2020, 2, 5) , time: Time.now , kind: "Abs
 
 puts "Workouts seeded"
 
-Stat.create!(user_id: mary.id, exercise_id: squat.id , weight: 260, comment: "Double Bodyweight Backsquat! Yay!")
-Stat.create!(user_id: angie.id, exercise_id: mile.id , time: 8.5, comment: "Fastest Mile Run! Yay!")
+Stat.create!(user_id: mary.id, exercise_id: cleanandjerk.id , weight: 185, comment: "PR Clean and Jerk! Yay!")
+Stat.create!(user_id: angie.id, exercise_id: deadlift.id , weight: 100, comment: "Best deadlift yet! Yay!")
 puts "Stats seeded"
-
 
 Appointment.create!(date: Date.new(2020, 3, 8), time: Time.now, workout_id: legday.id, user_id: mary.id, location: "In my garage" )
 Appointment.create!(date: Date.new(2020, 3, 8), time: Time.now, workout_id: abday.id, user_id: angie.id, location: "Mid City Gym" )
 puts "Appointments seeded"
 
-
-puts "Creating Joins"
 ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
 ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
 ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
 ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
 ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
 ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
+puts "ExerciseWorkout seeded"
