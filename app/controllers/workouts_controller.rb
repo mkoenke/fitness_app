@@ -12,11 +12,9 @@ class WorkoutsController < ApplicationController
 
     def new
         @workout = Workout.new  
-        @wo1 = @workout.exercise_workouts.build
-        @wo2 = @workout.exercise_workouts.build
-        @wo3 = @workout.exercise_workouts.build
-        @wo4 = @workout.exercise_workouts.build
-        @wo5 = @workout.exercise_workouts.build
+        5.times do 
+            @workout.exercise_workouts.build 
+        end
         if params[:legs]
             @exercises = Exercise.where(category: "Legs")
         elsif params[:arms]
@@ -36,6 +34,7 @@ class WorkoutsController < ApplicationController
     end
 
     def create
+        byebug
         workout = Workout.create(workout_params)
         if workout.valid?
             redirect_to workout_path(workout)
