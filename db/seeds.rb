@@ -64,6 +64,13 @@ dumbellpress = Exercise.create!(name:"Incline Dumbell Press", description:"Press
 cablefly = Exercise.create!(name:"Incline Bench Cable Fly", description: "Seated incline with resistance cables", video: "https://www.youtube.com/watch?v=GtHNC-5GtR0")
 pullover = Exercise.create!(name:"Incline Dumbell Pullovers", description: "Seated incline with dumbell", video: "https://www.youtube.com/watch?v=JRZ3K9eYCBM")
 
+pullup = Exercise.create!(name:"Strict Pull Ups", description: "Overhand strict pullups (no acceleration)", video: "https://www.youtube.com/watch?v=y9i6es2l80c")
+barbellrows = Exercise.create!(name:"Barbell Bent-Over Rows", description:"Bent over rows targeting mid back", video: "https://www.youtube.com/watch?v=oUjrL5X_jz4")
+dumbellrows = Exercise.create!(name:"Single Arm Dumbell Rows", description:"Unilateral row using bench support", video: "https://www.youtube.com/watch?v=xl1YiqQY2vA")
+pulldowns = Exercise.create!(name:"Lat Pull Downs", description:"Overhead pulldown to chest targeting lat muscles ", video:"https://www.youtube.com/watch?v=lueEJGjTuPQ" )
+backextension = Exercise.create!(name:"Back Extensions", description: "Starting from folded over position using back and glutes to raise body", video: "https://www.youtube.com/watch?v=ph3pddpKzzw")
+goodmorning = Exercise.create!(name:"Good Mornings", description: "Barbell movement from standing to L shape forward fold and back to standing", video: "https://www.youtube.com/watch?v=YA-h3n9L4YU")
+
 
 puts "Exercises seeded"
 
