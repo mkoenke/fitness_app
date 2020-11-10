@@ -23,12 +23,21 @@ mary = User.create!(name: "Mary Koenke", age: 35, username: "mkoenke", password:
 angie = User.create!(name: "Angelina Ramos", age: 11, username: "angie", password: "angie")
 puts "Users seeded"
 
-sumo = Exercise.create!(name:"Sumo Deadlift", description:"fake description", video:"video here" )
-bicep = Exercise.create!(name:"Bicep Curl", description:"fake description", video:"video here" )
-pushup = Exercise.create!(name:"Push ups", description: "fake description", video: "video here")
-squat = Exercise.create!(name:"Barbell Back Squat", description: "fake description", video: "video here")
-highknees = Exercise.create!(name:"High Knees", description:"fake description", video: "video here")
-mile = Exercise.create!(name:"Mile Run", description:"fake description", video: "video here")
+backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"https://www.youtube.com/watch?v=emfzIfOSkKc" )
+frontsquat = Exercise.create!(name:"Front Squat", description:"Weighted squat with barbell on front rack", video:"https://www.youtube.com/watch?v=lNJ3DyibYZQ" )
+splitsquat = Exercise.create!(name:"Bulgarian Split Squats", description: "Weighted squat with barbell and rear foot elevated", video: "vhttps://www.youtube.com/watch?v=W5H-0DMiclY")
+deadlift = Exercise.create!(name:"Conventional Deadlift", description: "Weighted barbell pull with feet hips width distance", video: "https://www.youtube.com/watch?v=op9kVnSso6Q")
+romaniandl = Exercise.create!(name:"Romanian Deadlift", description:"Stiff-legged deadlift starting from top of the pull", video: "https://www.youtube.com/watch?v=lNJ3DyibYZQ")
+calf = Exercise.create!(name:"Calf Raises", description:"Exercise to target calf muscles", video: "https://www.youtube.com/watch?v=c5Kv6-fnTj8")
+legpress = Exercise.create!(name:"Leg Press", description:"Seated leg press to target quads", video:"https://www.youtube.com/watch?v=Aq5uxXrXq7c" )
+kettlebell = Exercise.create!(name:"Kettle Bell Swings", description:"Swing with kettlebell to target core and glutes", video:"https://www.youtube.com/watch?v=6zKAw3C8XN4" )
+lunges = Exercise.create!(name:"Barbell Lunges", description: "Lunges weighted with barbell", video: "https://www.youtube.com/watch?v=RL0kxD6cpz4")
+glutebridge = Exercise.create!(name:"Weighted Glute Bridge", description: "Weighted hip thrust to target glutes", video: "https://www.youtube.com/watch?v=QW1ROB4IUIA")
+
+bicep = Exercise.create!(name:"Bicep Curl", description:"Curl with dumbell to target bicep", video: "https://www.youtube.com/watch?v=uO_CNYidOw0")
+shoulderpress = Exercise.create!(name:"Shoulder Press", description:"Overhead press to target deltoids", video: "https://www.youtube.com/watch?v=B-aVuyhvLHU")
+
+
 puts "Exercises seeded"
 
 legday = Workout.create!(date: Date.new(2020, 3, 8) , time: Time.now , kind: "Legs", user_id: mary.id)
