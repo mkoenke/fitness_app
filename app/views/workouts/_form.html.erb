@@ -37,7 +37,7 @@
     
     <%= f.fields_for :exercise_workouts do |f| %>
         <%= f.label :exercise_id %>
-        <%= select_tag "category", options_from_collection_for_select(@exercises, :category, :category), :onchange => "this.form.submit();"%>
+        <%# select_tag "category", options_for_select(@exercises.map {|x| x.category}.uniq), :onchange => remote_function(:url => {:controller => :workouts , :action => :new}) %>
         <%= f.collection_select :exercise_id, @exercises, :id, :name, prompt: true%>
         <%= f.label :sets %>
         <%= f.number_field :sets %>
