@@ -18,11 +18,12 @@
 
     <%= f.fields_for :exercise_workouts do |f| %>
         <%= f.label :exercise_id %>
-        <%= f.collection_select :exercise_id, Exercise.all, :id, :name%><br>
+        <%= f.collection_select :exercise_id, Exercise.all, :id, :name, prompt: true%><br>
         <%= f.label :sets %>
         <%= f.number_field :sets %><br>
         <%= f.label :reps %>
         <%= f.number_field :reps %><br>
+        <%= f.check_box :_destroy %>Delete<br>
     <% end %>
 
     <%= f.submit %>

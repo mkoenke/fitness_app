@@ -4,6 +4,6 @@ class Workout < ApplicationRecord
     has_many :appointments
     has_many :exercises, through: :exercise_workouts 
     has_many :users, through: :appointments 
-    accepts_nested_attributes_for :exercise_workouts
+    accepts_nested_attributes_for :exercise_workouts, allow_destroy: true
 
 end
