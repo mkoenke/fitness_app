@@ -1,4 +1,4 @@
-<h1><%= @workout.kind %></h1>
+<div class="container"><h1><%= @workout.kind %></h1>
 
 <h3>Created By: <%= link_to @workout.user.name, user_path(@workout.user) %></h3>
 
@@ -6,8 +6,9 @@
 <h3>Time: <%= @workout.time %></h3>
 
 <h3>Exercises:</h3>
+</div>
 <% @workout.exercises.each do |x| %>
-    <div class="container"><div class="showname"><%= x.name %></div><br>
+    <div class="container"><div class="showname"><%= link_to x.name, exercise_path(x) %></div><br>
     <%# move logic to model%>
     <div class = "wo-stats"><%= x.exercise_workouts.find {|join| join.workout == @workout}.sets %> sets, <%= x.exercise_workouts.find {|join| join.workout == @workout}.reps %> reps</strong><br>
     <%= x.description %><br>
