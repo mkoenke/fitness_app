@@ -18,10 +18,10 @@ class ExerciseWorkoutsController < ApplicationController
     def create
         join = Join.create(join_params)
         if join.valid?
-            redirect_to join_path(join)
+            redirect_to workout_path(join.workout)
         else
             flash[:errors] = join.errors.full_messages
-            redirect_to new_join_path
+            redirect_to new_workout_path
         end
     end
 
@@ -31,10 +31,10 @@ class ExerciseWorkoutsController < ApplicationController
 
     def update
         if @join.update(join_params)
-            redirect_to join_path(@join)
+            redirect_to workout_path(@join.workout)
         else
             flash[:errors] = @join.errors.full_messages
-            redirect_to edit_join_path
+            redirect_to edit_workout_path
         end
     end
 

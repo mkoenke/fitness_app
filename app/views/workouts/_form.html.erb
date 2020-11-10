@@ -1,3 +1,22 @@
+<%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Olympic Weightlifting", name: :olympic%>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Arms/Shoulders", name: :arms%>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Legs", name: :legs%>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Chest", name: :chest %>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Back", name: :back%>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "All", name: :all%>
+        <% end %>
+
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
         <%= error %>
@@ -16,34 +35,15 @@
     <%= f.label :time %>
     <%= f.time_field :time %><br><br>
     
-
-    <%= f.fields_for :exercise_workouts do |b| %>
-        <%= b.label :exercise_id %><br>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "All", name: :all%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Olympic Weightlifting", name: :olympic%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Arms/Shoulders", name: :arms%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Legs", name: :legs%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Chest", name: :chest %>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Back", name: :back%>
-        <% end %>
-        <%= b.collection_select :exercise_id, @exercises, :id, :name, prompt: true%>
-        <%= b.label :sets %>
-        <%= b.number_field :sets %>
-        <%= b.label :reps %>
-        <%= b.number_field :reps %><br>
-        <%= b.check_box :_destroy %>Delete<br>
+    <%= f.fields_for :exercise_workouts do |f| %>
+        <%= f.label :exercise_id %>
+        <%= f.collection_select :exercise_id, @exercises, :id, :name, prompt: true%>
+        <%= f.label :sets %>
+        <%= f.number_field :sets %>
+        <%= f.label :reps %>
+        <%= f.number_field :reps %><br>
+        <%= f.check_box :_destroy %>Delete<br>
     <% end %>
 
     <%= f.submit %>
-<% end %>
+<% end %><br><br>
