@@ -1,3 +1,22 @@
+<%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Olympic Weightlifting", name: :olympic%>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Arms/Shoulders", name: :arms%>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Legs", name: :legs%>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Chest", name: :chest %>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "Back", name: :back%>
+        <% end %>
+        <%= form_tag new_workout_path, method: :get do %>
+            <%= submit_tag "All", name: :all%>
+        <% end %>
+
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
         <%= error %>
@@ -16,25 +35,6 @@
     <%= f.label :time %>
     <%= f.time_field :time %><br><br>
     
-
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Olympic Weightlifting", name: :olympic%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Arms/Shoulders", name: :arms%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Legs", name: :legs%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Chest", name: :chest %>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "Back", name: :back%>
-        <% end %>
-        <%= form_tag new_workout_path, method: :get do %>
-            <%= submit_tag "All", name: :all%>
-        <% end %>
     <%= f.fields_for :exercise_workouts do |f| %>
         <%= f.label :exercise_id %>
         <%= f.collection_select :exercise_id, @exercises, :id, :name, prompt: true%>
@@ -46,4 +46,4 @@
     <% end %>
 
     <%= f.submit %>
-<% end %>
+<% end %><br><br>
