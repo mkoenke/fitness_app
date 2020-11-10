@@ -2,4 +2,10 @@
 
 <p><%= @exercise.description %></p>
 
-<iframe width="764" height="573" src=<%= @exercise.video %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<%= @video_id %>
+
+<iframe width="764" height="573" src="http://www.youtube.com/embed/#{@video_id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<%# 
+<iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{@video_id}", :title => "YouTube video player", :width => "640"}</iframe> %>

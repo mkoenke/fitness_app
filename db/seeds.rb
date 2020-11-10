@@ -23,7 +23,7 @@ mary = User.create!(name: "Mary Koenke", age: 35, username: "mkoenke", password:
 angie = User.create!(name: "Angelina Ramos", age: 11, username: "angie", password: "angie")
 puts "Users seeded"
 
-backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"https://www.youtube.com/watch?v=emfzIfOSkKc" )
+backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"watch?v=emfzIfOSkKc" )
 frontsquat = Exercise.create!(name:"Front Squat", description:"Weighted squat with barbell on front rack", video:"https://www.youtube.com/watch?v=lNJ3DyibYZQ" )
 splitsquat = Exercise.create!(name:"Bulgarian Split Squats", description: "Weighted squat with barbell and rear foot elevated", video: "https://www.youtube.com/watch?v=W5H-0DMiclY")
 deadlift = Exercise.create!(name:"Conventional Deadlift", description: "Weighted barbell pull with feet hips width distance", video: "https://www.youtube.com/watch?v=op9kVnSso6Q")
