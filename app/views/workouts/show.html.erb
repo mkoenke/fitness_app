@@ -7,11 +7,11 @@
 
 <h3>Exercises:</h3>
 <% @workout.exercises.each do |x| %>
-    <strong><%= x.name %><br>
+    <div class="container"><div class="showname"><%= x.name %></div><br>
     <%# move logic to model%>
-    <%= x.exercise_workouts.find {|join| join.workout == @workout}.sets %> sets, <%= x.exercise_workouts.find {|join| join.workout == @workout}.reps %> reps</strong><br>
+    <div class = "wo-stats"><%= x.exercise_workouts.find {|join| join.workout == @workout}.sets %> sets, <%= x.exercise_workouts.find {|join| join.workout == @workout}.reps %> reps</strong><br>
     <%= x.description %><br>
-    <%= x.video %><br><br>
+    <%= x.video %></div></div><br><br>
 <% end %>
 
 <%= button_to "Delete Workout", workout_path(@workout), method: :delete %>
