@@ -11,19 +11,16 @@ class WorkoutsController < ApplicationController
     end
 
     def new
-        # byebug
         @workout = Workout.new
-        #@workout.exercise_workouts.build
+        5.times do 
+            @workout.exercise_workouts.build
+        end
         render :new 
     end
 
     def create
-        #byebug
         workout = Workout.create(workout_params)
         if workout.valid?
-            exercise_ids = params[:workout][:exercise_ids].delete_if {|x| x == ""}
-            @exercises = exercise_ids.map {|id| Exercise.find(id)}
-            workout.update(exercises: @exercises)
             redirect_to workout_path(workout)
         else
             flash[:errors] = workout.errors.full_messages
@@ -52,7 +49,7 @@ class WorkoutsController < ApplicationController
     private
 
     def workout_params
-        params.require(:workout).permit(:date, :time, :kind, :user_id, exercise_ids: [], exercise_workouts_attributes: [:sets, :reps, :exercise_id, :workout_id])
+        params.require(:workout).permit(:date, :time, :kind, :user_id, exercise_workouts_attributes: [:sets, :reps, :exercise_id, :workout_id])
     end
 
     def set_workout
