@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_11_10_174549) do
     t.integer "user_id"
     t.integer "exercise_id"
     t.integer "weight"
-    t.float "time"
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -55,13 +54,13 @@ ActiveRecord::Schema.define(version: 2020_11_10_174549) do
     t.string "password_digest"
     t.string "name"
     t.integer "age"
+    t.integer "weight"
+    t.integer "height"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.date "date"
-    t.time "time"
     t.string "kind"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

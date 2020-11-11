@@ -19,8 +19,8 @@ ExerciseWorkout.destroy_all
 puts "Destroying Joins"
 
 
-mary = User.create!(name: "Mary Koenke", age: 35, username: "mkoenke", password_digest: "mkoenke")
-angie = User.create!(name: "Angelina Ramos", age: 11, username: "angie", password_digest: "angie")
+mary = User.create!(name: "Mary Koenke", age: 35, weight: 125, height: 64, username: "mkoenke", password_digest: "mkoenke")
+angie = User.create!(name: "Angelina Ramos", age: 11, weight: 90, height: 55, username: "angie", password_digest: "angie")
 puts "Users seeded"
 
 backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"emfzIfOSkKc", category: "Legs")
@@ -73,11 +73,11 @@ goodmorning = Exercise.create!(name:"Good Mornings", description: "Barbell movem
 
 puts "Exercises seeded"
 
-legday = Workout.create!(date: Date.new(2020, 3, 8) , time: Time.now , kind: "Legs", user_id: mary.id)
-armday = Workout.create!(date: Date.new(2020, 3, 6) , time: Time.now , kind: "Arms", user_id: angie.id)
-shoulderday = Workout.create!(date: Date.new(2020, 3, 4) , time: Time.now , kind: "Shoulders", user_id: mary.id)
-gluteday = Workout.create!(date: Date.new(2020, 2, 7) , time: Time.now , kind: "Glutes", user_id: angie.id)
-abday = Workout.create!(date: Date.new(2020, 2, 5) , time: Time.now , kind: "Abs", user_id: mary.id)
+legday = Workout.create!( kind: "Legs", user_id: mary.id)
+armday = Workout.create!(kind: "Arms", user_id: angie.id)
+shoulderday = Workout.create!(kind: "Shoulders", user_id: mary.id)
+gluteday = Workout.create!(kind: "Glutes", user_id: angie.id)
+abday = Workout.create!(kind: "Abs", user_id: mary.id)
 
 puts "Workouts seeded"
 

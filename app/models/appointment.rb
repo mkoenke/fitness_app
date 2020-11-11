@@ -2,6 +2,8 @@ class Appointment < ApplicationRecord
     belongs_to :user 
     belongs_to :workout 
 
+    validates :date, :time, :workout_id, :user_id, :location, presence: true
+
     def start_time
         self.date ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
     end
