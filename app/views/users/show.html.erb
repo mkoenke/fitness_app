@@ -1,6 +1,9 @@
 <div class="show-container">
 <div class="show-tile1">
 <h1>Profile</h1>
+<% if @user.photo.attached?%>
+    <image src="<%= (url_for(@user.photo)) %>">
+<% end%>
 <h3>Name: <%= @user.name %></h3>
 <h3>Age: <%= @user.age %></h3>
 <h3>Username: <%= @user.username %></h3>
