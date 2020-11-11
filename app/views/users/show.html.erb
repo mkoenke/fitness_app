@@ -1,9 +1,15 @@
+<div class="index-container">
+<div class="index-tile", style="text-align: center;">
 <h1>Profile</h1>
 <h3>Name: <%= @user.name %></h3>
 <h3>Age: <%= @user.age %></h3>
 <h3>Username: <%= @user.username %></h3>
-<h3><%= button_to "Create a Stat!", new_stat_path, method: :get %></h3>
-<%= button_to "Edit Profile", edit_user_path(@user), method: :get %>
+<h3><%= button_to "Create a Stat!", new_stat_path, method: :get, class: "form-buttons"%></h3>
+<h3><%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "form-buttons" %></h3>
+<h3><%= button_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure? You will lose all your workouts and stats."}, class: "form-buttons"%></h3>
+</div>
+
+<div class="index-tile">
 <h3>Scheduled Workouts:</h3>
 <%= month_calendar events: @appointments do |date, appointments| %>
   <%= date.strftime("%m/%d/%Y") %>
@@ -13,4 +19,6 @@
       Workout: <%= link_to appointment.workout.kind, workout_path(appointment.workout) %> <br>   Location: <%= appointment.location%>
     </div>
   <% end %>
+</div>
 <% end %>
+</div>
