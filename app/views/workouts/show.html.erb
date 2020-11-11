@@ -10,9 +10,15 @@
 <% @workout.exercises.each do |x| %>
     <div class="container"><div class="showname"><%= link_to x.name, exercise_path(x) %></div><br>
     <%# move logic to model%>
-    <div class = "wo-stats"><%= x.exercise_workouts.find {|join| join.workout == @workout}.sets %> sets, <%= x.exercise_workouts.find {|join| join.workout == @workout}.reps %> reps</strong><br>
+    <div class = "wo-stats"><%= x.exercise_workouts.find {|join| join.workout == @workout}.sets %> sets x <%= x.exercise_workouts.find {|join| join.workout == @workout}.reps %> reps</strong><br>
     <%= x.description %><br>
-    <%= x.video %></div></div><br><br>
+
+<iframe width="764" height="573" src="http://www.youtube.com/embed/<%=x.video%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+    </div></div><br><br>
 <% end %>
 
-<%= button_to "Delete Workout", workout_path(@workout), method: :delete %>
+<%= button_to "Schedule this Workout", new_appointment_path, method: :get %> <br><br>
+
+<%= button_to "Edit Workout", edit_workout_path, method: :get%> <br><br>
+
+<%= button_to "Delete Workout", workout_path(@workout), method: :delete %> <br>
