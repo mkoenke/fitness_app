@@ -180,3 +180,39 @@ a:hover {
   padding: 10px;
 
 } */
+
+/* --------------CSS for show pages --------------*/
+.show-container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+
+}
+
+.show-tile {
+  padding: 10px 40px;
+  margin: 8px 10px;
+  text-align: justify;
+  background-color: #919090;
+  border: 5px solid black;
+  border-radius: 15px;
+  flex-grow: 2;
+}
+
+.show-tile1 {
+  padding: 10px 40px;
+  margin: 8px 0px;
+  text-align: justify;
+  background-color: #efefef;
+  border: 5px solid black;
+  border-radius: 15px;
+}
+
+.show-tile:hover {
+  background-color: #efefef;
+
+}
+.show-tile1:hover {
+  background-color: #919090;
+
+}
