@@ -123,7 +123,7 @@ a:hover {
   border: none;
   background-color: white;
   color: #57e6d8;
-  padding: 15px 32px;
+  padding: 15px 32px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -150,7 +150,7 @@ a:hover {
 }
 
 .form-container {
-  max-width: 1000px;
+  max-width: auto;
   height: auto;
   margin: 0px auto;
   padding-top: 15px;

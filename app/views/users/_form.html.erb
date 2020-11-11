@@ -1,3 +1,9 @@
+<% if flash[:user_errors] %>
+    <% flash[:user_errors].each do |error| %>
+        <p><%= error %></p>
+    <% end %>
+<% end %>
+<div class="form-container"
 <%= form_for @user do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -7,7 +13,8 @@
 <%= f.text_field :username %>
 <%= f.label :password %>
 <%= f.password_field :password %>
-<%= f.label :password_confirmation %>
+<%= f.label "Confirm Password" %>
 <%= f.password_field :password_confirmation %>
-<%= f.submit %>
+<%= f.submit :class => "form-buttons" %>
 <% end %>
+</div>
