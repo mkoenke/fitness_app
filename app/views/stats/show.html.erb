@@ -1,7 +1,9 @@
-<h1>Stat Information</h1>
+<h1>You did great!!!</h1>
 <h3>User: <%= @stat.user.name %></h3>
 <h3>Exercise: <%= @stat.exercise.name %></h3>
-<h3>Weight: <%= @stat.weight %></h3>
+<h3>Weight: <%= @stat.weight %> pounds</h3>
 <h3>Comment: <%= @stat.comment %></h3>
 <%= button_to "Edit Stat", edit_stat_path(@stat), method: :get %> <br>
-<%= button_to "View All Stats", stats_path, method: :get %>
+<%= button_to "Delete Stat", stat_path(@stat), method: :delete %> <br>
+<%= button_to "View All Stats", stats_path, method: :get %> <br>
+<%= button_to "Log another PR!", new_stat_path, method: :get %>

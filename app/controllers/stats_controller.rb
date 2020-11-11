@@ -38,7 +38,7 @@ class StatsController < ApplicationController
     def destroy
         @stat = Stat.find(params[:id])
         @stat.destroy
-        redirect_to stats_path
+        redirect_to user_path(@stat.user)
     end
 
     private

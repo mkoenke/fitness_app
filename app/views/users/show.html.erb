@@ -5,13 +5,17 @@
     <image src="<%= (url_for(@user.photo)) %>">
 <% end%>
 <h3>Name: <%= @user.name %></h3>
-<h3>Age: <%= @user.age %></h3>
 <h3>Username: <%= @user.username %></h3>
-<h3><%= button_to "Create a Stat!", new_stat_path, method: :get, class: "form-buttons"%></h3>
+<h3>Age: <%= @user.age %></h3>
+<h3>Height: <%= @user.height %> inches</h3>
+<h3>Weight: <%= @user.weight %> pounds</h3>
 <h3><%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "form-buttons" %></h3>
-<h3>My Personal Records: <% @user.stats.each do |stat|%>
-<%= stat.exercise.name %> @ <%= stat.weight%> lbs. </h3> <br>
-<% end%>
+<h3><%= button_to "Create a PR!", new_stat_path, method: :get, class: "form-buttons"%></h3>
+<h3>My Personal Records: </h3>
+<h5> (Click exercise to view details)</h5>
+<h4> <% @user.stats.each do |stat|%>
+<%= link_to stat.exercise.name, stat_path(stat) %> @ <%= stat.weight%> lbs.  <br>
+<% end%></h4>
 <h3><%= button_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure? You will lose all your workouts and stats."}, class: "form-buttons"%></h3>
 </div>
 
