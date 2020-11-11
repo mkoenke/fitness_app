@@ -2,6 +2,10 @@
 <h3>Name: <%= @user.name %></h3>
 <h3>Age: <%= @user.age %></h3>
 <h3>Username: <%= @user.username %></h3>
+<h3>My Personal Records: <% @user.stats.each do |stat|%>
+<%= stat.exercise.name %> @ <%= stat.weight%> lbs. </h3> <br>
+<% end%>
+
 <h3><%= button_to "Create a Stat!", new_stat_path, method: :get %></h3>
 <%= button_to "Edit Profile", edit_user_path(@user), method: :get %>
 <h3>Scheduled Workouts:</h3>

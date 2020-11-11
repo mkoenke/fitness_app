@@ -7,4 +7,6 @@
 
 <iframe width="764" height="573" src="http://www.youtube.com/embed/<%=@exercise.video%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 
-
+<h3>Personal Records: <% @exercise.stats.each do |stat|%>
+<%= stat.user.name %> @ <%= stat.weight%> pounds </h3>
+<% end%>
