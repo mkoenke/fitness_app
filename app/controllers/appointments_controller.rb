@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
           redirect_to appointment_path(@appointment)
         else
           flash[:appointment_errors] = @appointment.errors.full_messages
-          redirect to new_appointment_path
+          redirect_to new_appointment_path
         end
     end
 
