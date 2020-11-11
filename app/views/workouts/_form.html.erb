@@ -35,7 +35,7 @@
 <div class="form-input">
      <%= f.hidden_field :user_id, value: session[:user_id] %><br> 
     <%= f.label "Title" %>
-    <%= f.text_field :kind %>
+    <%= f.text_field :kind %><br><br>
     
     <%= f.fields_for :exercise_workouts do |f| %>
         <%= f.label :exercise_id %>

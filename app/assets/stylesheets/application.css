@@ -161,9 +161,7 @@ a:hover {
   color: white;
 }
 
-/* .form-input {
-  display: flex;
-  flex-flow: row wrap;
+ .form-input {
   justify-content: center;
 }
 
@@ -171,6 +169,9 @@ a:hover {
   vertical-align: middle;
   margin: 5px 10px 5px 0;
   padding: 5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
 
 }
 
@@ -178,9 +179,15 @@ a:hover {
   vertical-align: middle;
   margin: 5px 10px 5px 0;
   padding: 10px;
+  border-radius: 5px;
+  color: #57e6d8;
 
-} */
+} 
 
+.form-input select {
+  border-radius: 5px;
+  color: #57e6d8;
+}
 /* --------------CSS for show pages --------------*/
 .show-container {
   display: flex;
@@ -208,10 +215,6 @@ a:hover {
   border-radius: 15px;
 }
 
-.show-tile:hover {
-  background-color: #efefef;
-
-}
 .show-tile1:hover {
   background-color: #919090;
 
