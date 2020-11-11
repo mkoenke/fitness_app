@@ -19,8 +19,8 @@ ExerciseWorkout.destroy_all
 puts "Destroying Joins"
 
 
-mary = User.create!(name: "Mary Koenke", age: 35, username: "mkoenke", password: "mkoenke")
-angie = User.create!(name: "Angelina Ramos", age: 11, username: "angie", password: "angie")
+mary = User.create!(name: "Mary Koenke", age: 35, username: "mkoenke", password_digest: "mkoenke")
+angie = User.create!(name: "Angelina Ramos", age: 11, username: "angie", password_digest: "angie")
 puts "Users seeded"
 
 backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"emfzIfOSkKc", category: "Legs")
