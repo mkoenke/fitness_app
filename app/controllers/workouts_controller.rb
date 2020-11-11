@@ -36,7 +36,7 @@ class WorkoutsController < ApplicationController
     def create
         workout = Workout.create(workout_params)
         if workout.valid?
-            redirect_to workout_path(workout)
+            redirect_to new_appointment_path
         else
             flash[:errors] = workout.errors.full_messages
             redirect_to new_workout_path

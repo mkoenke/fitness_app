@@ -6,6 +6,7 @@
 
 <div class="form-container">
 <%= form_for @appointment do |f| %>
+<div class="form-input">
 <%= f.label :date %>
 <%= f.date_field :date %>
 
@@ -19,7 +20,7 @@
 
 <%= f.label :location %>
 <%= f.text_field :location %><br><br>
-
+</div>
 <%= f.submit "Schedule Workout", :class => 'form-buttons' %>
 <% end %>
 </div>

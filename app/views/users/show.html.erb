@@ -14,8 +14,8 @@
 <% end%>
 <h3><%= button_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure? You will lose all your workouts and stats."}, class: "form-buttons"%></h3>
 </div>
-<div class="show-tile">
 
+<div class="show-tile">
 <h3>Scheduled Workouts:</h3>
 <%= month_calendar events: @appointments do |date, appointments| %>
   <%= date.strftime("%m/%d/%Y") %>
