@@ -1,3 +1,4 @@
+<div class="form-container">
 <%= form_for @appointment do |f| %>
 <%= f.label :date %>
 <%= f.date_field :date %>
@@ -9,5 +10,6 @@
 <%= f.collection_select :user_id, User.all, :id, :name %>
 <%= f.label :location %>
 <%= f.text_field :location %>
-<%= f.submit %>
+<%= f.submit :class => 'form-buttons' %>
 <% end %>
+</div>
