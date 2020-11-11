@@ -4,6 +4,7 @@
 <% end%>
 <% end%>
 <div class="form-container">
+<div class="form-input">
 <%= form_for @stat do |f| %>
  <%= f.hidden_field :user_id, value: session[:user_id] %> 
 <%= f.label :exercise_id %>
@@ -11,7 +12,8 @@
 <%= f.label :weight %>
 <%= f.number_field :weight %><br><br>
 <%= f.label :comment %>
-<%= f.text_area :comment %><br><br>
+<%= f.text_field :comment %><br><br>
+</div>
 <%= f.submit class: "form-buttons" %>
 <% end %>
 </div>
