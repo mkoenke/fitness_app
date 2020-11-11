@@ -15,9 +15,9 @@
     </div>
 
     <ul class="nav">
-      <li><%= link_to "Exercises", exercises_path %></li>
-      <li><%= link_to "Create a Workout", new_workout_path %></li>
-      <li><%= link_to "Schedule a Workout", new_appointment_path %></li>
+      <li class="left"><%= link_to "Exercises", exercises_path %></li>
+      <li class="left"><%= link_to "Create a Workout", new_workout_path %></li>
+      <li class="left"><%= link_to "Schedule a Workout", new_appointment_path %></li>
 
       <% if @current_user %>
         <li class="right">Welcome, <%= @current_user.name %>!</li>

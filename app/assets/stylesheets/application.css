@@ -50,26 +50,36 @@
      line-height: 30px;
      padding: 0px 15px;
      margin: 0px;
+     color: white;
   
    }
   
    .nav li:hover {
      background-color: #f7f3f3;
-     transition: 250ms;
+     border-radius: 15px;
+     color: #57e6d8;
    }
   
    .nav li a {
     text-decoration: none;
-    color: rgb(5,5,5);
+    color: white;
     font-weight: 800;
+  }
+
+  .nav li a:hover {
+    color: #57e6d8;
   }
   
   ul {
       border-radius: 15px;
   }
   
-  .right {
+  li.right {
     float: right;
+  }
+
+  li.left {
+    float: left;
   }
 
   /* -----------CSS for Index Pages------------ */
