@@ -1,6 +1,6 @@
 class ExercisesController < ApplicationController
     before_action :set_exercise, only: [:show, :edit, :update, :destroy]
-
+    skip_before_action :authorization, only: [:index]
     def index
         @exercises = Exercise.all 
         render :index

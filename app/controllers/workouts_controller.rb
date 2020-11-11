@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+    skip_before_action :authorization, only: [:index]
     before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -30,6 +31,7 @@ class WorkoutsController < ApplicationController
         else 
             @exercises = Exercise.all  
         end
+
         render :new 
     end
 

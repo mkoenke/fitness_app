@@ -1,6 +1,6 @@
 <div class="show-container">
 <div class="show-tile">
-<h1>Appointment Info:</h1>
+<h1>Scheduled Workout:</h1>
 <h3>Date: <%= @appointment.parsed_date %></h3>
 <h3>Time: <%= @appointment.parsed_time %></h3>
 <h3>Workout: <%= link_to @appointment.workout.kind, workout_path(@appointment.workout) %></h3>
