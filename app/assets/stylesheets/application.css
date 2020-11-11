@@ -150,7 +150,7 @@ a:hover {
 }
 
 .form-container {
-  max-width: auto;
+  max-width: 1500px;
   height: auto;
   margin: 0px auto;
   padding-top: 15px;

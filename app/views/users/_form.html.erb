@@ -3,7 +3,7 @@
         <p style="color:red;"><%= error %> <br>
     <% end%>
 <% end%>
-
+<div class="form-container">
 <%= form_for @user do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -12,12 +12,13 @@
 <%= f.label :password %>
 <%= f.password_field :password %>
 <%= f.label "Confirm Password" %>
-<%= f.password_field :password_confirmation %>
+<%= f.password_field :password_confirmation %><br><br>
 <%= f.label :age %>
 <%= f.number_field :age %>
 <%= f.label :weight %>
 <%= f.number_field :weight %>
 <%= f.label :height %>
-<%= f.number_field :height %>
-<%= f.submit %>
+<%= f.number_field :height %><br><br>
+<%= f.submit :class => "form-buttons" %>
 <% end %>
+</div>
