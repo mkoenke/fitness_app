@@ -21,6 +21,10 @@
 <%= f.label "Confirm Password" %>
 <%= f.password_field :password_confirmation %><br><br>
 </div>
+<%= f.number_field :height %>
+<%= f.label "Profile Photo" %>
+<%= f.file_field :photo %>
+<br><br>
 <%= f.submit :class => "form-buttons" %>
 <% end %>
 </div>

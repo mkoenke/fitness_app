@@ -10,6 +10,7 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :age, numericality: {greater_than: 0}
 
-     has_secure_password
+    has_secure_password
+    has_one_attached :photo
  
 end

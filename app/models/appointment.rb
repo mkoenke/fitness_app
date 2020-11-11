@@ -12,7 +12,7 @@ class Appointment < ApplicationRecord
     end 
 
     def start_time
-        self.date ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
+        self.date 
     end
 
     def parsed_date
