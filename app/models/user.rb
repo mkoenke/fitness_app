@@ -8,6 +8,6 @@ class User < ApplicationRecord
     validates :username, :password, presence: true
     validates :password, confirmation: { case_sensitive: true}
 
-    # has_secure_password
+     has_secure_password
  
 end

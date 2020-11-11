@@ -5,7 +5,7 @@
 <%= f.label :time %>
 <%= f.time_field :time %>
 <%= f.label :workout_id %>
-<%= f.collection_select :workout_id, Workout.all, :id, :kind %>
+<%= f.collection_select :workout_id, Workout.where(id: session[:user_id]), :id, :kind %>
 <%= f.label :user_id %>
 <%= f.collection_select :user_id, User.all, :id, :name %>
 <%= f.label :location %>
