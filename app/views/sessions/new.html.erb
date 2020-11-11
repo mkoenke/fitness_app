@@ -1,7 +1,7 @@
-<% if flash[:error] %>
-  <p><%= flash[:error]%></p>
-<% end %>
-<br><br>
+<% if flash[:error]%>
+<p style="color:red;"><%= flash[:error]  %> <br>
+<% end%>
+
 <div class="form-container">
 
   <%= form_for :session, url: login_path do |f| %>

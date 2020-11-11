@@ -1,3 +1,9 @@
+<% if flash[:errors]%>
+<% flash[:errors].each do |error|%>
+<p style="color:red;"><%= error %> <br>
+<% end%>
+<% end%>
+
 <div class="form-container">
 <div class="btn-group">
 <%= form_tag new_workout_path, method: :get do %>
@@ -29,8 +35,8 @@
 <div class="form-input">
      <%= f.hidden_field :user_id, value: session[:user_id] %><br> 
     <%= f.label "Title" %>
-    <%= f.text_field :kind %><br>
-
+    <%= f.text_field :kind %>
+    
     <%= f.fields_for :exercise_workouts do |f| %>
         <%= f.label :exercise_id %>
         <%= f.collection_select :exercise_id, @exercises, :id, :name, prompt: true%>
