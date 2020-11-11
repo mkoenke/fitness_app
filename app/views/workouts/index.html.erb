@@ -1,5 +1,6 @@
 <h1>Workouts</h1>
+<p>(Click to view details)</p>
 
-<% @workouts.each do |workout| %>
+<h3><% @workouts.each do |workout| %>
     <%= link_to workout.kind, workout_path(workout)%><br>
-<% end %>
+<% end %></h3>

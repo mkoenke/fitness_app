@@ -15,13 +15,15 @@
     </div>
 
     <ul class="nav">
-      <li class="left"><%= link_to "Exercises", exercises_path %></li>
+      <li class="left"><%= link_to "View Exercises", exercises_path %></li>
       <li class="left"><%= link_to "Create a Workout", new_workout_path %></li>
-      <li class="left"><%= link_to "Schedule a Workout", new_appointment_path %></li>
+      <li class="left"><%= link_to "View Existing Workouts", workouts_path %></li>
 
       <% if @current_user %>
-        <li class="right">Welcome, <%= @current_user.name %>!</li>
+      
         <li class="right"><%= link_to "Log Out", logout_path, method: :delete %></li>
+        <li class="right"><%= link_to "My Profile", user_path(@current_user) %></li>
+        <li class="right">Welcome, <%= @current_user.name %>!</li>
       <% else %>
         <li class="right"><%= link_to "Login", new_login_path %></li>
         <li class="right"><%= link_to "Sign Up", new_user_path %></li>
