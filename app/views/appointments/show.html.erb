@@ -5,4 +5,5 @@
 <h3>User: <%= link_to @appointment.user.name, user_path(@appointment.user) %></h3>
 <h3>Location: <%= @appointment.location %></h3>
 
-<%# button_to "Edit Appointment", edit_appointmemt_path(@appointment), method: :get %> 
+<%= button_to "Edit Session", edit_appointment_path, method: :get %> <br>
+<%= button_to "Delete Session", appointment_path(@appointment), method: :delete %> 
