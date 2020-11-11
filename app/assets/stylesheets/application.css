@@ -60,7 +60,7 @@
   
    .nav li a {
     text-decoration: none;
-    color: rgb(5, 5, 5);
+    color: rgb(5,5,5);
     font-weight: 800;
   }
   
@@ -71,7 +71,8 @@
   .right {
     float: right;
   }
-  /* CSS for Index Pages */
+
+  /* -----------CSS for Index Pages------------ */
   .index-container {
     display: flex;
     flex-flow: row wrap;
@@ -92,9 +93,11 @@
     background-color: #efefef;
 
   }
-  body {
-    background-color: #efefef;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+  background-color: #efefef;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: center;
 }
 
 a {
@@ -105,4 +108,61 @@ a {
 a:hover {
   color: #57e6d8;
 }
+/*-----------CSS for Forms------------*/
+.form-buttons {
+  border: none;
+  background-color: #919090;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+}
 
+.form-buttons:hover {
+  color: #57e6d8;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  margin: 10px;
+  padding-top: 25px;
+}
+
+.form-container {
+  max-width: 1500px;
+  height: auto;
+  margin: 0px auto;
+  background-color: #919090;
+  border-radius: 100px;
+  text-align: center;
+  color: white;
+}
+
+/* .form-input {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.form-input label {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 5px;
+
+}
+
+.form-input input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+
+} */

@@ -1,31 +1,34 @@
+<div class="form-container">
+<div class="btn-group">
 <%= form_tag new_workout_path, method: :get do %>
-    <%= submit_tag "Olympic Weightlifting", name: :olympic%>
+    <%= submit_tag "Olympic Weightlifting", name: :olympic, :class => 'form-buttons'%>
 <% end %>
 <%= form_tag new_workout_path, method: :get do %>
-    <%= submit_tag "Arms/Shoulders", name: :arms%>
+    <%= submit_tag "Arms/Shoulders", name: :arms, :class => 'form-buttons'%>
 <% end %>
 <%= form_tag new_workout_path, method: :get do %>
-    <%= submit_tag "Legs", name: :legs%>
+    <%= submit_tag "Legs", name: :legs, :class => 'form-buttons'%>
 <% end %>
 <%= form_tag new_workout_path, method: :get do %>
-    <%= submit_tag "Chest", name: :chest %>
+    <%= submit_tag "Chest", name: :chest, :class => 'form-buttons'%>
 <% end %>
 <%= form_tag new_workout_path, method: :get do %>
-    <%= submit_tag "Back", name: :back%>
+    <%= submit_tag "Back", name: :back, :class => 'form-buttons'%>
 <% end %>
 <%= form_tag new_workout_path, method: :get do %>
-    <%= submit_tag "All", name: :all%>
+    <%= submit_tag "All", name: :all, :class => 'form-buttons'%>
 <% end %>
-
+</div>
+<br>
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
         <%= error %>
     <% end %>
 <% end %>
 <%= form_for @workout do |f| %>
+<div class="form-input">
     <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :name %>
-
+    <%= f.collection_select :user_id, User.all, :id, :name%>
     <%= f.label "Title" %>
     <%= f.text_field :kind %>
 
@@ -34,16 +37,17 @@
     
     <%= f.label :time %>
     <%= f.time_field :time %><br><br>
-    
+
     <%= f.fields_for :exercise_workouts do |f| %>
         <%= f.label :exercise_id %>
         <%= f.collection_select :exercise_id, @exercises, :id, :name, prompt: true%>
         <%= f.label :sets %>
         <%= f.number_field :sets %>
         <%= f.label :reps %>
-        <%= f.number_field :reps %><br>
-        <%= f.check_box :_destroy %>Delete<br>
+        <%= f.number_field :reps %>
+        <%= f.check_box :_destroy %>Delete<br><br>
     <% end %>
-
-    <%= f.submit %>
+    </div>
+    <%= f.submit :class => 'form-buttons' %>
 <% end %><br><br>
+</div>
