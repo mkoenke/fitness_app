@@ -4,7 +4,6 @@ class CreateStats < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :exercise_id
       t.integer :weight
-      t.float :time
       t.string :comment
 
       t.timestamps
