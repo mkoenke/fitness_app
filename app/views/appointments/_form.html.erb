@@ -2,14 +2,18 @@
 <%= form_for @appointment do |f| %>
 <%= f.label :date %>
 <%= f.date_field :date %>
+
 <%= f.label :time %>
 <%= f.time_field :time %>
+
 <%= f.label :workout_id %>
-<%= f.collection_select :workout_id, Workout.where(id: session[:user_id]), :id, :kind %>
-<%= f.label :user_id %>
-<%= f.collection_select :user_id, User.all, :id, :name %>
+<%= f.collection_select :workout_id, Workout.where(user_id: session[:user_id]), :id, :kind %>
+
+<%= f.hidden_field :user_id, value: session[:user_id] %>
+
 <%= f.label :location %>
-<%= f.text_field :location %>
-<%= f.submit :class => 'form-buttons' %>
+<%= f.text_field :location %><br><br>
+
+<%= f.submit "Schedule Workout", :class => 'form-buttons' %>
 <% end %>
 </div>

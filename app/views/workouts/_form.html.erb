@@ -27,16 +27,9 @@
 <% end %>
 <%= form_for @workout do |f| %>
 <div class="form-input">
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :name%>
+     <%= f.hidden_field :user_id, value: session[:user_id] %><br> 
     <%= f.label "Title" %>
-    <%= f.text_field :kind %>
-
-    <%= f.label :date %>
-    <%= f.date_field :date %>
-    
-    <%= f.label :time %>
-    <%= f.time_field :time %><br><br>
+    <%= f.text_field :kind %><br>
 
     <%= f.fields_for :exercise_workouts do |f| %>
         <%= f.label :exercise_id %>

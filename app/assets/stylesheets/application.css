@@ -121,21 +121,23 @@ a:hover {
 /*-----------CSS for Forms------------*/
 .form-buttons {
   border: none;
-  background-color: #919090;
-  color: white;
+  background-color: white;
+  color: #57e6d8;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
-}
-
-.form-buttons:hover {
-  color: #57e6d8;
-  background-color: white;
   border-radius: 20px;
 }
+
+/*
+.form-buttons:hover {
+  color: #919090;
+  background-color: white;
+  border-radius: 20px;
+}*/
 
 .btn-group {
   display: flex;
@@ -148,9 +150,11 @@ a:hover {
 }
 
 .form-container {
-  max-width: 1500px;
+  max-width: 1000px;
   height: auto;
   margin: 0px auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: #919090;
   border-radius: 100px;
   text-align: center;
