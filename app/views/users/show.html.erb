@@ -9,8 +9,8 @@
 <h3>Username: <%= @user.username %></h3>
 <h3><%= button_to "Create a Stat!", new_stat_path, method: :get, class: "form-buttons"%></h3>
 <h3><%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "form-buttons" %></h3>
-<h3>My Personal Records: <% @user.stats.each do |stat|%>
-<%= stat.exercise.name %> @ <%= stat.weight%> lbs. </h3> <br>
+<h3>My Personal Records: </h3> <% @user.stats.each do |stat|%>
+<%= link_to stat.exercise.name, stat_path(stat) %> @ <%= stat.weight%> lbs. <br>
 <% end%>
 <h3><%= button_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure? You will lose all your workouts and stats."}, class: "form-buttons"%></h3>
 </div>
