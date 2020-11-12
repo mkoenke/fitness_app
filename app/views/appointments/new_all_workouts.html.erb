@@ -14,6 +14,7 @@
 <%= f.time_field :time %>
 
 <%= f.label :workout_id %>
+
 <%= f.collection_select :workout_id, Workout.all, :id, :kind %>
 
 <%= f.hidden_field :user_id, value: session[:user_id] %>
