@@ -2,8 +2,8 @@ class Appointment < ApplicationRecord
     belongs_to :user 
     belongs_to :workout 
 
-    validates :date, :time, :workout_id, :user_id, :location, presence: true
-    validate :not_past_date
+    # validates :date, :time, :workout_id, :user_id, :location, presence: true
+    # validate :not_past_date
 
     def not_past_date
         if self.date && self.date < Date.today

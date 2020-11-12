@@ -20,7 +20,7 @@ puts "Destroying Joins"
 
 
 mary = User.create!(name: "Mary Koenke", age: 35, weight: 125, height: 64, username: "mkoenke", password_digest: "mkoenke")
-angie = User.create!(name: "Angelina Ramos", age: 11, weight: 90, height: 55, username: "angie", password_digest: "angie")
+
 puts "Users seeded"
 
 backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"emfzIfOSkKc", category: "Legs")
@@ -73,26 +73,53 @@ goodmorning = Exercise.create!(name:"Good Mornings", description: "Barbell movem
 
 puts "Exercises seeded"
 
-legday = Workout.create!( kind: "Legs", user_id: mary.id)
-armday = Workout.create!(kind: "Arms", user_id: angie.id)
-shoulderday = Workout.create!(kind: "Shoulders", user_id: mary.id)
-gluteday = Workout.create!(kind: "Glutes", user_id: angie.id)
-abday = Workout.create!(kind: "Abs", user_id: mary.id)
+deathleg = Workout.create!( kind: "Killer Leg Workout", user_id: mary.id)
+oly1 = Workout.create!(kind: "Olympic Wightlifting Progression 1", user_id: mary.id)
+oly2 = Workout.create!(kind: "Olympic Weightlifting Progression 2", user_id: mary.id)
+squats = Workout.create!(kind: "Death By Squats", user_id: mary.id)
+assess = Workout.create!(kind: "Assessory Day", user_id: mary.id)
 
 puts "Workouts seeded"
 
 Stat.create!(user_id: mary.id, exercise_id: cleanandjerk.id , weight: 185, comment: "PR Clean and Jerk! Yay!")
-Stat.create!(user_id: angie.id, exercise_id: deadlift.id , weight: 100, comment: "Best deadlift yet! Yay!")
+Stat.create!(user_id: mary.id, exercise_id: deadlift.id , weight: 275, comment: "Feeling strong!")
+Stat.create!(user_id: mary.id, exercise_id: backsquat.id , weight: 275, comment: "My legs hurt")
+Stat.create!(user_id: mary.id, exercise_id: frontsquat.id , weight: 235, comment: "I grinded through it")
+Stat.create!(user_id: mary.id, exercise_id: clean.id , weight: 195, comment: "Gotta catch my jerk up to this weight!")
+Stat.create!(user_id: mary.id, exercise_id: snatch.id , weight: 145, comment: "Finally!!!!")
 puts "Stats seeded"
 
-Appointment.create!(date: Date.new(2020, 3, 8), time: Time.now, workout_id: legday.id, user_id: mary.id, location: "In my garage" )
-Appointment.create!(date: Date.new(2020, 3, 8), time: Time.now, workout_id: abday.id, user_id: angie.id, location: "Mid City Gym" )
+Appointment.create!(date: Date.new(2020, 11, 8), time: Time.now, workout_id: deathleg.id, user_id: mary.id, location: "Garage" )
+Appointment.create!(date: Date.new(2020, 11, 9), time: Time.now, workout_id: oly1.id, user_id: mary.id, location: "Mid City Gym" )
+Appointment.create!(date: Date.new(2020, 11, 10), time: Time.now, workout_id: squats.id, user_id: mary.id, location: "Garage" )
+Appointment.create!(date: Date.new(2020, 11, 13), time: Time.now, workout_id: oly2.id, user_id: mary.id, location: "Mid City Gym" )
+Appointment.create!(date: Date.new(2020, 11, 15), time: Time.now, workout_id: assess.id, user_id: mary.id, location: "Garage" )
 puts "Appointments seeded"
 
-ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
-ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
-ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
-ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
-ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
-ExerciseWorkout.create!(workout_id: Workout.all.sample.id , exercise_id: Exercise.all.sample.id , sets: 3 , reps: 10)
+ExerciseWorkout.create!(workout_id: deathleg.id , exercise_id: romaniandl.id , sets: 3 , reps: 10)
+ExerciseWorkout.create!(workout_id: deathleg.id , exercise_id: legpress.id , sets: 5 , reps: 10)
+ExerciseWorkout.create!(workout_id: deathleg.id , exercise_id: kettlebell.id , sets: 3 , reps: 20)
+ExerciseWorkout.create!(workout_id: deathleg.id , exercise_id: lunges.id , sets: 4 , reps: 15)
+ExerciseWorkout.create!(workout_id: deathleg.id , exercise_id: glutebridge.id , sets: 3 , reps: 20)
+ExerciseWorkout.create!(workout_id: oly1.id , exercise_id: clean.id , sets: 8 , reps: 1)
+ExerciseWorkout.create!(workout_id: oly1.id , exercise_id: splitjerk.id , sets: 3 , reps: 3)
+ExerciseWorkout.create!(workout_id: oly1.id , exercise_id: backsquat.id , sets: 5 , reps: 5)
+ExerciseWorkout.create!(workout_id: oly1.id , exercise_id: cleanandjerk.id , sets: 5 , reps: 2)
+ExerciseWorkout.create!(workout_id: oly1.id , exercise_id: cleanhighpull.id , sets: 5 , reps: 5)
+ExerciseWorkout.create!(workout_id: oly2.id , exercise_id: snatch.id , sets: 8 , reps: 1)
+ExerciseWorkout.create!(workout_id: oly2.id , exercise_id: balance.id , sets: 5 , reps: 3)
+ExerciseWorkout.create!(workout_id: oly2.id , exercise_id: powersnatch.id , sets: 5 , reps: 2)
+ExerciseWorkout.create!(workout_id: oly2.id , exercise_id: highhangsnatch.id , sets: 4 , reps: 2)
+ExerciseWorkout.create!(workout_id: oly2.id , exercise_id: snatchhighpull.id , sets: 5 , reps: 5)
+ExerciseWorkout.create!(workout_id: squats.id , exercise_id: backsquat.id , sets: 3 , reps: 10)
+ExerciseWorkout.create!(workout_id: squats.id , exercise_id: frontsquat.id , sets: 5 , reps: 3)
+ExerciseWorkout.create!(workout_id: squats.id , exercise_id: splitsquat.id , sets: 3 , reps: 10)
+ExerciseWorkout.create!(workout_id: squats.id , exercise_id: goodmorning.id , sets: 5 , reps: 5)
+ExerciseWorkout.create!(workout_id: squats.id , exercise_id: backextension.id , sets: 3 , reps: 10)
+ExerciseWorkout.create!(workout_id: assess.id , exercise_id: pullup.id , sets: 3 , reps: 10)
+ExerciseWorkout.create!(workout_id: assess.id , exercise_id: barbellrows.id , sets: 3 , reps: 10)
+ExerciseWorkout.create!(workout_id: assess.id , exercise_id: pushups.id , sets: 3 , reps: 20)
+ExerciseWorkout.create!(workout_id: assess.id , exercise_id: miliatrypress.id , sets: 5 , reps: 5)
+ExerciseWorkout.create!(workout_id: assess.id , exercise_id: dips.id , sets: 3 , reps: 10)
+
 puts "ExerciseWorkout seeded"
