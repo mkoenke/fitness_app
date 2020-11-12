@@ -9,4 +9,8 @@ class Workout < ApplicationRecord
 
     accepts_nested_attributes_for :exercise_workouts, allow_destroy: true
 
+    def self.sorted
+        self.all.sort_by {|wo| wo.kind }
+    end
+
 end

@@ -1,16 +1,24 @@
 <h1>Workouts</h1>
-<div class="image">
+<p>(Click to view details)</p>
+<div class="exercises-img">
       <%= image_tag "strong.jpg", class: "workout-img" %>
 </div>
-
-<p>(Click to view details)</p>
-
-Your Workouts:
-<h3><% @workouts.select do |workout| %>
-    <%= link_to workout.kind, workout_path(workout)%><br>
+<div class="index-container">
+<div class="index-tile", style="position: absolute; top: 400px; left: 215px;">
+<h3>Existing Workouts:</h3>
+<% @workouts.sorted.each do |workout| %>
+    <% if workout.user_id != @current_user %>
+    <p><h3><%= link_to workout.kind, workout_path(workout)%></h3></p>
+    <% end %>
 <% end %>
-</h3>
-Existing Workouts:
-<h3><% @workouts.each do |workout| %>
-    <%= link_to workout.kind, workout_path(workout)%><br>
-<% end %></h3>
+</div>
+
+<div class="index-tile", style="position: absolute; top: 400px; right: 215px;">
+<h3>Your Workouts:</h3>
+<% @workouts.select do |workout| %>
+    <% if workout.user_id == @current_user %>
+    <p><h3><%= link_to workout.kind, workout_path(workout)%></h3></p>
+    <% end %>
+<% end %>
+</div>
+</div>

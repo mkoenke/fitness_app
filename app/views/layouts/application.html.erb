@@ -11,7 +11,11 @@
 
   <body>
     <div class="banner">
-      <%= image_tag "Str.gif", class: "banner-img" %>
+      <ul>
+        <li class="center"><%= image_tag "Str.gif", class: "banner-img" %></li>
+        <li class="left"><%= button_to "Learn More", users_path, class: "form-buttons" %></li>
+        <li class="right"><%= image_tag "fb-twitter-instagram.jpeg"%></li>
+      </ul>
     </div>
 
     <ul class="nav">

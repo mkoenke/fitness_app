@@ -9,12 +9,13 @@
 <h4><%= @user.height %> inches</h4>
 <h4><%= @user.weight %> pounds</h4>
 <h4><%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "form-buttons" %></h4>
-<h4><%= button_to "Create a PR!", new_stat_path, method: :get, class: "form-buttons"%></h4>
+<h4><%= button_to "Log a PR!", new_stat_path, method: :get, class: "form-buttons"%></h4>
 <h4>My Personal Records: </h4>
 <h5> (Click exercise to view details)</h5>
 <h4> <% @user.stats.each do |stat|%>
 <%= link_to stat.exercise.name, stat_path(stat) %> @ <%= stat.weight%> lbs.  <br>
 <% end%></h4>
+<h3><%= button_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure? You will lose all your workouts and stats."}, class: "form-buttons"%></h3>
 </div>
 
 <div class="show-tile">
@@ -24,7 +25,8 @@
 
   <% appointments.each do |appointment| %>
     <div>
-      Workout: <%= link_to appointment.workout.kind, workout_path(appointment.workout) %> <br>   Location: <%= appointment.location%>
+      Workout: <%= link_to appointment.workout.kind, workout_path(appointment.workout) %> @ <%= appointment.location%><br>
+      <%= link_to appointment.parsed_time, appointment_path(appointment) %>
     </div>
   <% end %>
 </div>

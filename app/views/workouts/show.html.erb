@@ -15,13 +15,13 @@
 <% end %>
 
 <% if @current_user == @workout.user%>
-<%= button_to "Schedule this Workout", new_appointment_path, method: :get %> <br><br>
+<%= button_to "Schedule this Workout", new_appointment_path, method: :get, class: "form-buttons" %> <br><br>
 <% end%>
 
 <% if @current_user == @workout.user%>
-<%= button_to "Edit Workout", edit_workout_path, method: :get%> <br><br>
+<%= button_to "Edit Workout", edit_workout_path, method: :get, class: "form-buttons"%> <br><br>
 <% end%>
 
 <% if @current_user == @workout.user%>
-<%= button_to "Delete Workout", workout_path(@workout), method: :delete %> <br>
+<%= button_to "Delete Workout", workout_path(@workout), method: :delete, class: "form-buttons" %> <br>
 <% end%>

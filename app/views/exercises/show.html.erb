@@ -1,5 +1,6 @@
 <h1><%= @exercise.name %></h1>
-
+<div class="show-container">
+<div style="text-align: center;">
 <h3>Class: <%= @exercise.category %></h3>
 
 <p><%= @exercise.description %></p>
@@ -8,8 +9,11 @@
 <iframe width="764" height="573" src="http://www.youtube.com/embed/<%=@exercise.video%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 <br>
 <br>
-<%= button_to "Go Back", exercises_path, method: :get %>
-
-<h3>Personal Records: <% @exercise.stats.each do |stat|%>
-<%= stat.user.name %> @ <%= stat.weight%> pounds </h3>
+<%= button_to "Go Back", exercises_path, method: :get, class: "form-buttons" %>
+<h3>Personal Records:</h3>
+<% @exercise.stats.each do |stat|%>
+<%= stat.user.name %> @ <%= stat.weight%> pounds
 <% end%>
+</div>
+
+</div>
