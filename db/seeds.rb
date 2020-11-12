@@ -21,7 +21,7 @@ puts "Destroying Joins"
 
 mary = User.create!(name: "Mary Koenke", age: 35, weight: 125, height: 64, username: "mkoenke", password_digest: "mkoenke")
 angie = User.create!(name: "Angelina Ramos", age: 11, weight: 90, height: 55, username: "angie", password_digest: "angie")
-jo = User.create!(name: "Jomarie Polanco", age: 27, weight: 145, height: 70, username: "joey",  password_digest: "12345")
+jo = User.create!(name: "Jomarie Polanco", age: 27, weight: 145, height: 70, username: "joey",  password_digest: BCrypt::Password.create("12345"))
 puts "Users seeded"
 
 backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"emfzIfOSkKc", category: "Legs")
