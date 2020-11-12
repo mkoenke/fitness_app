@@ -1,7 +1,11 @@
-<h1>You did great!!!</h1>
-<h3><%= @stat.user.name %></h3>
+<br>
+<div class="congrats-img">
+      <%= image_tag "congrats.jpeg", class: "congrats-img" %>
+</div>
+<h1>You did great, <%= @stat.user.name %>!!!</h1>
+
 <h3><%= link_to @stat.exercise.name, exercise_path(@stat.exercise) %></h3>
-<h3><%= @stat.weight %> pounds</h3>
+<h3><%= @stat.weight %> pounds!</h3>
 <h3><%= @stat.comment %></h3>
 <% if @stat.video.attached? %>
     <%# <%= image_tag @stat.video.preview(resize_to_limit: [100,100]) %>

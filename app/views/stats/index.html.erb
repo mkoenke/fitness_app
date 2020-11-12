@@ -1,4 +1,8 @@
-<h1>All Personal Records:</h1>
+<h1>We're Stronger Together!</h1>
+<div class="stronggroup-img">
+      <%= image_tag "stronggroup.jpeg", class: "stronggroup-img" %>
+</div>
+<h2>All Personal Records:</h2>
 
 <% @stats.stats_by_exercise.each do  |st| %>
     <h4><%= link_to st.exercise.name, stat_path(st) %>: <%= st.weight %> lbs: <%= st.user.name %></h4>
