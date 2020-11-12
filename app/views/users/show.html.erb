@@ -19,13 +19,14 @@
 </div>
 
 <div class="show-tile">
-<h3>Scheduled Workouts:</h3>
+<h2>Scheduled Workouts</h2>
 <%= month_calendar events: @appointments do |date, appointments| %>
   <%= date.strftime("%m/%d/%Y") %>
 
   <% appointments.each do |appointment| %>
-    <div class="calendar">
-      Workout: <%= link_to appointment.workout.kind, workout_path(appointment.workout) %> @ <%= appointment.location%><br>
+    <div>
+      Workout: <br>
+      <%=link_to appointment.workout.kind, workout_path(appointment.workout) %> <br> @ <%= appointment.location%><br>
       <%= link_to appointment.parsed_time, appointment_path(appointment) %>
     </div>
   <% end %>
