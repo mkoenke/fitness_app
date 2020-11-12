@@ -3,7 +3,7 @@ class WorkoutsController < ApplicationController
     before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
     def index
-        # byebug
+        #  byebug
         @workouts = Workout.all 
         render :index
     end
