@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :users
   resources :exercises
   resources :workouts
-  # resources :exercise_workouts
 
   delete '/sessions/logout', to: 'sessions#logout', as: 'logout'
   get '/sessions/new', to: 'sessions#new', as: 'new_login'
