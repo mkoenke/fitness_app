@@ -57,17 +57,17 @@
 
    .banner li.left {
      position: absolute;
-     top: 150px;
-     left:215px;
+     top: 120px;
+     left: 150px;
      border: none;
-     background-color: #919090;
      color: #57e6d8;
      text-align: center;
      text-decoration: none;
      display: inline-block;
-     font-size: 16px;
+     font-size: 30px;
      font-weight: bold;
      border-radius: 20px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
    }
 
    
