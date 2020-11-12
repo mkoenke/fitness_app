@@ -7,10 +7,9 @@
 <h3><%= link_to @stat.exercise.name, exercise_path(@stat.exercise) %></h3>
 <h3><%= @stat.weight %> pounds!</h3>
 <h3><%= @stat.comment %></h3>
-<% if @stat.video.attached? %>
-    <%# <%= image_tag @stat.video.preview(resize_to_limit: [100,100]) %>
-<% end %>
-    Video Preview Goes Here
+<% if @stat.photo.attached?%>
+    <div class="profile-pic"><image src="<%= (url_for(@stat.photo)) %>"></div>
+<% end%>
     <br><br>
 <%= button_to "Edit Stat", edit_stat_path(@stat), method: :get, class: "form-buttons" %> <br>
 <%= button_to "Delete Stat", stat_path(@stat), method: :delete, class: "form-buttons"%> <br>

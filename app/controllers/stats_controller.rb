@@ -24,11 +24,11 @@ class StatsController < ApplicationController
 
     def edit
         @stat = Stat.find(params[:id])
-        @stat.video.attach(params[:video])
     end
     
     def update
         @stat = Stat.find(params[:id])
+        @stat.photo.attach(params[:photo])
         if @stat.update(stat_params)
           redirect_to stat_path(@stat)
         else
@@ -46,6 +46,6 @@ class StatsController < ApplicationController
     private
 
     def stat_params
-        params.require(:stat).permit(:user_id, :exercise_id, :weight, :time, :comment, :video)
+        params.require(:stat).permit(:user_id, :exercise_id, :weight, :time, :comment, :photo)
     end
 end

@@ -26,10 +26,12 @@ class UsersController < ApplicationController
 
     def edit
         @user = User.find(params[:id])
+  
     end
     
     def update
         @user = User.find(params[:id])
+        @user.photo.attach(params[:photo])
         if @user.update(user_params)
           redirect_to user_path(@user)
         else

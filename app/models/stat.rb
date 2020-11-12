@@ -4,7 +4,7 @@ class Stat < ApplicationRecord
 
     validates :user_id, :exercise_id, :weight, :comment, presence: true
 
-    has_one_attached :video
+    has_one_attached :photo
     
     def self.stats_by_exercise
         self.all.sort_by {|stat| stat.exercise.name}

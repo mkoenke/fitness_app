@@ -1,11 +1,13 @@
 <h1>Workouts</h1>
-<p>(Click to view details)</p>
+
 <div class="exercises-img">
       <%= image_tag "strong.jpg", class: "workout-img" %>
 </div>
+<p>(Click workout to view details)</p>
 <div class="index-container">
+
 <div class="index-tile", style="margin-left: 200 px; top: 400px; left: 215px;">
-<h3>Existing Workouts:</h3>
+<h3><u>Existing Workouts</u></h3>
 <% @workouts.sorted.each do |workout| %>
     <% if workout.user_id != @current_user %>
     <p><h3><%= link_to workout.kind, workout_path(workout)%></h3></p>
@@ -14,7 +16,7 @@
 </div>
 
 <div class="index-tile", style="margin-right:200 px; top: 400px; right: 215px;">
-<h3>Your Workouts:</h3>
+<h3><u>Your Workouts</u></h3>
 <% @workouts.select do |workout| %>
     <% if workout.user_id == session[:user_id] %>
     <p><h3><%= link_to workout.kind, workout_path(workout)%></h3></p>
