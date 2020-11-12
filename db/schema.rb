@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_11_12_200613) do
     t.integer "exercise_id"
     t.integer "weight"
     t.string "comment"
+    t.string "video"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
