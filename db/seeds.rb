@@ -19,7 +19,7 @@ ExerciseWorkout.destroy_all
 puts "Destroying Joins"
 
 
-mary = User.create!(name: "Mary Rachael Koenke", age: 35, weight: 125, height: 64, username: "mkoenke", password_digest: Bcrypt::Password.create("mkoenke"))
+mary = User.create!(name: "Mary Rachael Koenke", age: 35, weight: 125, height: 64, username: "mkoenke", password_digest: BCrypt::Password.create("mkoenke"), admin: true)
 jo = User.create!(name: "Jomarie Polanco", age: 27, weight: 145, height: 70, username: "joey",  password_digest: BCrypt::Password.create("12345"))
 puts "Users seeded"
 

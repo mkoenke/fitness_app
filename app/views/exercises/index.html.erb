@@ -37,3 +37,7 @@
 <% end %>
 </div>
 </div>
+<br>
+<% if @current_user.admin %>
+    <%= button_to "Add New Exercise", new_exercise_path, method: :get, class: 'form-buttons' %>
+<% end %>
