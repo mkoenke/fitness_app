@@ -325,3 +325,8 @@ a:hover {
     max-height: 300px;
     border-radius: 15px;
    }
+
+   /* CSS FOR ROOT */
+   .landing {
+       font-size: medium;
+   }
