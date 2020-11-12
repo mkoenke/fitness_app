@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
   end 
 
   def authorization 
+    if @current_user == nil
     flash[:message] = "Please sign up or log in!"
+    end
     redirect_to root_path unless logged_in_user
   end 
 end
