@@ -19,8 +19,8 @@ ExerciseWorkout.destroy_all
 puts "Destroying Joins"
 
 
-mary = User.create!(name: "Mary Koenke", age: 35, weight: 125, height: 64, username: "mkoenke", password_digest: Bcrypt::Password.create("mkoenke"))
-
+mary = User.create!(name: "Mary Rachael Koenke", age: 35, weight: 125, height: 64, username: "mkoenke", password_digest: Bcrypt::Password.create("mkoenke"))
+jo = User.create!(name: "Jomarie Polanco", age: 27, weight: 145, height: 70, username: "joey",  password_digest: BCrypt::Password.create("12345"))
 puts "Users seeded"
 
 backsquat = Exercise.create!(name:"Barbell Back Squat", description:"Weighted squat with barbell on your back", video:"emfzIfOSkKc", category: "Legs")
@@ -79,6 +79,13 @@ oly2 = Workout.create!(kind: "Olympic Weightlifting Progression 2", user_id: mar
 squats = Workout.create!(kind: "Death By Squats", user_id: mary.id)
 assess = Workout.create!(kind: "Assessory Day", user_id: mary.id)
 
+# jo's workouts
+beginner_leg = Workout.create!(kind: "Beginner Leg Workout", user_id: jo.id)
+rowing_back = Workout.create!(kind: "Rower's Back Workout", user_id: jo.id)
+full_body_blaster = Workout.create!(kind: "Full Body Blaster", user_id: jo.id)
+arms_workout = Workout.create!(kind: "Arms Arms Arms", user_id: jo.id)
+ab_workout = Workout.create!(kind: "Abs for Days", user_id: jo.id)
+
 puts "Workouts seeded"
 
 Stat.create!(user_id: mary.id, exercise_id: cleanandjerk.id , weight: 185, comment: "PR Clean and Jerk! Yay!")
@@ -94,6 +101,15 @@ Appointment.create!(date: Date.new(2020, 11, 9), time: Time.now, workout_id: oly
 Appointment.create!(date: Date.new(2020, 11, 10), time: Time.now, workout_id: squats.id, user_id: mary.id, location: "Garage" )
 Appointment.create!(date: Date.new(2020, 11, 13), time: Time.now, workout_id: oly2.id, user_id: mary.id, location: "Mid City Gym" )
 Appointment.create!(date: Date.new(2020, 11, 15), time: Time.now, workout_id: assess.id, user_id: mary.id, location: "Garage" )
+
+
+#jo's appointments
+Appointment.create!(date: Date.new(2020, 11, 16), time: Time.new(2020, 11, 15, 6, 0, 0), workout_id: beginner_leg.id, user_id: jo.id, location: "Home Gym")
+Appointment.create!(date: Date.new(2020, 11, 17), time: Time.new(2020, 11, 15, 6, 0, 0), workout_id: rowing_back.id, user_id: jo.id, location: "F45")
+Appointment.create!(date: Date.new(2020, 11, 18), time: Time.new(2020, 11, 15, 7, 0, 0), workout_id: ab_workout.id, user_id: jo.id, location: "Home Gym")
+Appointment.create!(date: Date.new(2020, 11, 19), time: Time.new(2020, 11, 15, 13, 0, 0), workout_id: arms_workout.id, user_id: jo.id, location: "F45")
+Appointment.create!(date: Date.new(2020, 11, 20), time: Time.new(2020, 11, 15, 18, 0, 0), workout_id: full_body_blaster.id, user_id: jo.id, location: "F45")
+
 puts "Appointments seeded"
 
 ExerciseWorkout.create!(workout_id: deathleg.id , exercise_id: romaniandl.id , sets: 3 , reps: 10)
@@ -122,4 +138,30 @@ ExerciseWorkout.create!(workout_id: assess.id , exercise_id: pushups.id , sets: 
 ExerciseWorkout.create!(workout_id: assess.id , exercise_id: miliatrypress.id , sets: 5 , reps: 5)
 ExerciseWorkout.create!(workout_id: assess.id , exercise_id: dips.id , sets: 3 , reps: 10)
 
+#jo's exerciseworkouts
+ExerciseWorkout.create!(workout_id: beginner_leg.id, exercise_id: romaniandl.id, sets: 3, reps: 20)
+ExerciseWorkout.create!(workout_id: beginner_leg.id, exercise_id: splitsquat.id, sets: 3, reps: 12)
+ExerciseWorkout.create!(workout_id: beginner_leg.id, exercise_id: glutebridge.id, sets: 3, reps: 12)
+ExerciseWorkout.create!(workout_id: beginner_leg.id, exercise_id: calf.id, sets: 3, reps: 20)
+
+ExerciseWorkout.create!(workout_id: rowing_back.id, exercise_id: romaniandl.id, sets: 3, reps: 12)
+ExerciseWorkout.create!(workout_id: rowing_back.id, exercise_id: barbellrows.id, sets: 3, reps: 12)
+ExerciseWorkout.create!(workout_id: rowing_back.id, exercise_id: goodmorning.id, sets: 3, reps: 12)
+ExerciseWorkout.create!(workout_id: rowing_back.id, exercise_id: backextension.id, sets: 3, reps: 12)
+
+ExerciseWorkout.create!(workout_id: full_body_blaster.id, exercise_id: pushups.id , sets: 3, reps: 20)
+ExerciseWorkout.create!(workout_id: full_body_blaster.id, exercise_id: deadlift.id, sets: 3, reps: 12)
+ExerciseWorkout.create!(workout_id: full_body_blaster.id, exercise_id: dumbellpress.id, sets: 3, reps: 15)
+ExerciseWorkout.create!(workout_id: full_body_blaster.id, exercise_id: kettlebell.id, sets: 3, reps: 20)
+ExerciseWorkout.create!(workout_id: full_body_blaster.id, exercise_id: dips.id, sets: 3, reps: 12)
+
+ExerciseWorkout.create!(workout_id: arms_workout.id, exercise_id: bicep.id, sets: 3, reps: 20)
+ExerciseWorkout.create!(workout_id: arms_workout.id, exercise_id: miliatrypress.id, sets: 3, reps: 20)
+ExerciseWorkout.create!(workout_id: arms_workout.id, exercise_id: pushpress.id, sets: 3, reps: 20)
+
+
+ExerciseWorkout.create!(workout_id: ab_workout.id, exercise_id: kettlebell.id, sets: 3, reps: 20)
+ExerciseWorkout.create!(workout_id: ab_workout.id, exercise_id: goodmorning.id, sets: 3, reps: 12)
+ExerciseWorkout.create!(workout_id: ab_workout.id, exercise_id: pushups.id, sets: 3, reps: 15)
+ExerciseWorkout.create!(workout_id: ab_workout.id, exercise_id: glutebridge.id, sets: 3, reps: 15)
 puts "ExerciseWorkout seeded"
