@@ -152,6 +152,7 @@ a {
 
 a:hover {
   color: #2302f5;
+  font-style: italic;
 }
 /*-----------CSS for Forms------------*/
 .form-buttons {
