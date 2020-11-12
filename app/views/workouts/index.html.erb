@@ -4,7 +4,7 @@
       <%= image_tag "strong.jpg", class: "workout-img" %>
 </div>
 <div class="index-container">
-<div class="index-tile", style="position: absolute; top: 400px; left: 215px;">
+<div class="index-tile", style="margin-left: 200 px; top: 400px; left: 215px;">
 <h3>Existing Workouts:</h3>
 <% @workouts.sorted.each do |workout| %>
     <% if workout.user_id != @current_user %>
@@ -13,7 +13,7 @@
 <% end %>
 </div>
 
-<div class="index-tile", style="position: absolute; top: 400px; right: 215px;">
+<div class="index-tile", style="margin-right:200 px; top: 400px; right: 215px;">
 <h3>Your Workouts:</h3>
 <% @workouts.select do |workout| %>
     <% if workout.user_id == @current_user %>
