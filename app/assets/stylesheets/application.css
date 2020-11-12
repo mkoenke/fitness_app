@@ -171,6 +171,7 @@ a:hover {
   padding: 5px;
   font-size: 20px;
   font-weight: bold;
+  color: #57e6d8;
 
 }
 
@@ -179,14 +180,15 @@ a:hover {
   margin: 5px 10px 5px 0;
   padding: 10px;
   border-radius: 5px;
-  color: #57e6d8;
+  background-color: #efefef;
 
 } 
 
 .form-input select {
   border-radius: 5px;
-  color: #57e6d8;
+  background-color: #efefef;
 }
+
 /* --------------CSS for show pages --------------*/
 .show-container {
   display: flex;
@@ -208,7 +210,7 @@ a:hover {
 .show-tile1 {
   padding: 10px 40px;
   margin: 8px 0px;
-  text-align: justify;
+  text-align: center;
   background-color: #efefef;
   border: 5px solid black;
   border-radius: 15px;

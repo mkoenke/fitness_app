@@ -7,3 +7,6 @@
 <%= button_to "Delete Stat", stat_path(@stat), method: :delete %> <br>
 <%= button_to "View All Stats", stats_path, method: :get %> <br>
 <%= button_to "Log another PR!", new_stat_path, method: :get %>
+<% if @stat.video.attached? %>
+    <%# <%= image_tag @stat.video.preview(resize_to_limit: [100,100]) %> Video Preview Goes Here
+<% end %>

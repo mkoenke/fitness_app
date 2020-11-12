@@ -16,7 +16,6 @@
 <h4> <% @user.stats.each do |stat|%>
 <%= link_to stat.exercise.name, stat_path(stat) %> @ <%= stat.weight%> lbs.  <br>
 <% end%></h4>
-<h3><%= button_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure? You will lose all your workouts and stats."}, class: "form-buttons"%></h3>
 </div>
 
 <div class="show-tile">

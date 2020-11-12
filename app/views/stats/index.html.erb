@@ -1,6 +1,5 @@
 <h1>All Personal Records:</h1>
-<h3><% @stats.each do |stat|  %>
-Exercise: <%= link_to stat.exercise.name, stat_path(stat) %>, Weight: <%= stat.weight%>, by: 
-<%= stat.user.name %> <br>
-<% end%>
-</h3>
+
+<% @stats.stats_by_exercise.each do  |st| %>
+    <p><%= st.exercise.name %>: <%= st.weight %>lbs: <%= st.user.name %></p>
+<% end %>

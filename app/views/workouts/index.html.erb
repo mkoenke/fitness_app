@@ -5,6 +5,12 @@
 
 <p>(Click to view details)</p>
 
+Your Workouts:
+<h3><% @workouts.select do |workout| %>
+    <%= link_to workout.kind, workout_path(workout)%><br>
+<% end %>
+</h3>
+Existing Workouts:
 <h3><% @workouts.each do |workout| %>
     <%= link_to workout.kind, workout_path(workout)%><br>
 <% end %></h3>
