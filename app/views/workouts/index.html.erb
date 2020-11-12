@@ -16,7 +16,7 @@
 <div class="index-tile", style="margin-right:200 px; top: 400px; right: 215px;">
 <h3>Your Workouts:</h3>
 <% @workouts.select do |workout| %>
-    <% if workout.user_id == @current_user %>
+    <% if workout.user_id == session[:user_id] %>
     <p><h3><%= link_to workout.kind, workout_path(workout)%></h3></p>
     <% end %>
 <% end %>

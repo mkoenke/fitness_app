@@ -1,0 +1,27 @@
+<% if flash[:appointment_errors]%>
+<% flash[:appointment_errors].each do |error|%>
+<p style="color:red;"><%= error %> <br>
+<% end%>
+<% end%>
+
+<div class="form-container">
+<%= form_for @appointment do |f| %>
+<div class="form-input">
+<%= f.label :date %>
+<%= f.date_field :date %>
+
+<%= f.label :time %>
+<%= f.time_field :time %>
+
+<%= f.label :workout_id %>
+
+<%= f.collection_select :workout_id, Workout.all, :id, :kind %>
+
+<%= f.hidden_field :user_id, value: session[:user_id] %>
+
+<%= f.label :location %>
+<%= f.text_field :location %><br><br>
+</div>
+<%= f.submit "Schedule Workout", :class => 'form-buttons' %>
+<% end %>
+</div>

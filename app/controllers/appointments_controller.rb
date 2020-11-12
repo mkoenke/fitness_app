@@ -21,6 +21,20 @@ class AppointmentsController < ApplicationController
         end
     end
 
+    def new_all_workouts
+        @appointment = Appointment.new 
+    end
+
+    def create_all_workouts
+        @appointment = Appointment.create(appointment_params)
+        if @appointment.valid?
+            redirect_to appointment_path(@appointment)
+        else
+            flash[:appointment_errors] = @appointment.errors.full_messages 
+            redirect_to new_all_workouts_path
+        end
+    end
+
     def edit
         @appointment = Appointment.find(params[:id])
     end

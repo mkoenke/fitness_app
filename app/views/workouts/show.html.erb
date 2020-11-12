@@ -15,7 +15,7 @@
 <% end %>
 
 <% if @current_user %>
-<%= button_to "Schedule this Workout", new_appointment_path, method: :get, class: "form-buttons" %> <br><br>
+<%= button_to "Schedule this Workout", new_all_workouts_path, method: :get, class: "form-buttons" %> <br><br>
 <% end%>
 
 <% if @current_user == @workout.user%>
