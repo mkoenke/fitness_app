@@ -24,7 +24,7 @@
   <%= date.strftime("%m/%d/%Y") %>
 
   <% appointments.each do |appointment| %>
-    <div>
+    <div class="calendar">
       Workout: <%= link_to appointment.workout.kind, workout_path(appointment.workout) %> @ <%= appointment.location%><br>
       <%= link_to appointment.parsed_time, appointment_path(appointment) %>
     </div>
