@@ -49,22 +49,22 @@
    } 
 
    .banner li.right {
-    position: absolute;
-    top: 150px;
-    right: 175px;
+    position: fixed;
+    top: 120px;
+    right: -35px;
     
    }
 
    .banner li.left {
-     position: absolute;
+     position: fixed;
      top: 120px;
-     left: 150px;
+     left: 100px;
      border: none;
      color: #57e6d8;
      text-align: center;
      text-decoration: none;
      display: inline-block;
-     font-size: 30px;
+     font-size: 18px;
      font-weight: bold;
      border-radius: 20px;
      font-family: Georgia, 'Times New Roman', Times, serif;
