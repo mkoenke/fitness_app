@@ -1,17 +1,16 @@
 <div class="show-container">
 <div class="show-tile1">
-<h1>Profile</h1>
+<h1><%= @user.name%></h1>
 <% if @user.photo.attached?%>
-    <image src="<%= (url_for(@user.photo)) %>">
+    <div class="profile-pic"><image src="<%= (url_for(@user.photo)) %>"></div>
 <% end%>
-<h3>Name: <%= @user.name %></h3>
-<h3>Username: <%= @user.username %></h3>
-<h3>Age: <%= @user.age %></h3>
-<h3>Height: <%= @user.height %> inches</h3>
-<h3>Weight: <%= @user.weight %> pounds</h3>
-<h3><%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "form-buttons" %></h3>
-<h3><%= button_to "Create a PR!", new_stat_path, method: :get, class: "form-buttons"%></h3>
-<h3>My Personal Records: </h3>
+<h4>Username: <%= @user.username %></h4>
+<h4><%= @user.age %> years old</h4>
+<h4><%= @user.height %> inches</h4>
+<h4><%= @user.weight %> pounds</h4>
+<h4><%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "form-buttons" %></h4>
+<h4><%= button_to "Create a PR!", new_stat_path, method: :get, class: "form-buttons"%></h4>
+<h4>My Personal Records: </h4>
 <h5> (Click exercise to view details)</h5>
 <h4> <% @user.stats.each do |stat|%>
 <%= link_to stat.exercise.name, stat_path(stat) %> @ <%= stat.weight%> lbs.  <br>
