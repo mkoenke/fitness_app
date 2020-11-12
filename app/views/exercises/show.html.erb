@@ -19,7 +19,9 @@
 </div>
 
 <div class= "btn-group">
-<% if @current_user.admin %>
+<% if @current_user == nil || @current_user.admin == false %>
+    <%# blank space %>
+<% elsif @current_user.admin %>
     <%= button_to "Edit This Exercise", edit_exercise_path, method: :get, class: 'form-buttons'%>
     <%= button_to "Delete This Exercise", exercise_path(@exercise), method: :delete, class: 'form-buttons' %>
 <% end %>
