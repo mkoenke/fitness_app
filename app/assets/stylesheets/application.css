@@ -277,6 +277,11 @@ a:hover {
   width: 130px;
 }
 
+.showname {
+    font-size: larger;
+    font-weight: bolder;
+}
+
 /* CSS FOR IMAGES */
 
 .exercises-img {
