@@ -90,8 +90,8 @@ puts "Workouts seeded"
 
 Stat.create!(user_id: mary.id, exercise_id: cleanandjerk.id , weight: 185, comment: "PR Clean and Jerk! Yay!")
 Stat.create!(user_id: mary.id, exercise_id: deadlift.id , weight: 275, comment: "Feeling strong!")
-Stat.create!(user_id: mary.id, exercise_id: backsquat.id , weight: 275, comment: "My legs hurt")
-Stat.create!(user_id: mary.id, exercise_id: frontsquat.id , weight: 235, comment: "I grinded through it")
+Stat.create!(user_id: mary.id, exercise_id: backsquat.id , weight: 275, comment: "My legs hurt!!")
+Stat.create!(user_id: mary.id, exercise_id: frontsquat.id , weight: 235, comment: "I grinded through it, but I did it!")
 Stat.create!(user_id: mary.id, exercise_id: clean.id , weight: 195, comment: "Gotta catch my jerk up to this weight!")
 Stat.create!(user_id: mary.id, exercise_id: snatch.id , weight: 145, comment: "Finally!!!!")
 puts "Stats seeded"
