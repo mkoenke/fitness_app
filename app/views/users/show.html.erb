@@ -5,9 +5,9 @@
     <div class="profile-pic"><image src="<%= (url_for(@user.photo)) %>"></div>
 <% end%>
 <h3>Username: <%= @user.username %></h3>
-<h3><%= @user.age %> years old</h3>
-<h3><%= @user.height %> inches</h3>
-<h3><%= @user.weight %> pounds</h3>
+<h3>Age: <%= @user.age %> years old</h3>
+<h3>Height: <%= @user.height %> inches</h3>
+<h3>Weight: <%= @user.weight %> pounds</h3>
 <h4><%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "form-buttons" %></h4>
 <h4><%= button_to "Log a PR!", new_stat_path, method: :get, class: "form-buttons"%></h4>
 <h3>My Personal Records: </h3>
@@ -19,13 +19,14 @@
 </div>
 
 <div class="show-tile">
-<h3>Scheduled Workouts:</h3>
+<h2>Scheduled Workouts</h2>
 <%= month_calendar events: @appointments do |date, appointments| %>
   <%= date.strftime("%m/%d/%Y") %>
 
   <% appointments.each do |appointment| %>
     <div>
-      Workout: <%= link_to appointment.workout.kind, workout_path(appointment.workout) %> @ <%= appointment.location%><br>
+      Workout: <br>
+      <%=link_to appointment.workout.kind, workout_path(appointment.workout) %> <br> @ <%= appointment.location%><br>
       <%= link_to appointment.parsed_time, appointment_path(appointment) %>
     </div>
   <% end %>

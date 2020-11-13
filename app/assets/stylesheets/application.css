@@ -25,7 +25,6 @@
 h1 {
   text-transform: uppercase;
 }
-
 /* CSS FOR STATIC ELEMENTS */
 
  .banner img {
@@ -152,10 +151,12 @@ h1 {
 a {
   color:black;
   text-decoration: none;
+  text-align: left;
 }
 
 a:hover {
   color: #2302f5;
+  font-style: italic;
 }
 /*-----------CSS for Forms------------*/
 .form-buttons {
@@ -250,7 +251,6 @@ a:hover {
 .show-tile {
   padding: 10px 40px;
   margin: 8px 10px;
-  text-align: justify;
   background-color: #919090;
   border: 5px solid black;
   border-radius: 15px;
@@ -280,6 +280,12 @@ a:hover {
   padding: 5px;
   width: 130px;
 }
+
+.showname {
+    font-size: larger;
+    font-weight: bolder;
+}
+
 
 /* CSS FOR IMAGES */
 
@@ -319,4 +325,9 @@ a:hover {
     width: 70%;
     max-height: 300px;
     border-radius: 15px;
+   }
+
+   /* CSS FOR ROOT */
+   .landing {
+       font-size: medium;
    }
