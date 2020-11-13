@@ -94,6 +94,12 @@ Stat.create!(user_id: mary.id, exercise_id: backsquat.id , weight: 275, comment:
 Stat.create!(user_id: mary.id, exercise_id: frontsquat.id , weight: 235, comment: "I grinded through it, but I did it!")
 Stat.create!(user_id: mary.id, exercise_id: clean.id , weight: 195, comment: "Gotta catch my jerk up to this weight!")
 Stat.create!(user_id: mary.id, exercise_id: snatch.id , weight: 145, comment: "Finally!!!!")
+
+Stat.create!(user_id: jo.id, exercise_id: romaniandl.id, weight: 185, comment: "Feels good to be back in the gym!")
+Stat.create!(user_id: jo.id, exercise_id: goodmorning.id, weight: 190, comment: "Tough, but I feel amazing.")
+Stat.create!(user_id: jo.id, exercise_id: glutebridge.id, weight: 150, comment: "🍑🍑🍑🍑🍑🍑🍑🍑🍑🍑")
+Stat.create!(user_id: jo.id, exercise_id: pullover.id, weight: 65, comment: "My arms are jelly")
+Stat.create!(user_id: jo.id, exercise_id: backsquat.id, weight: 225, comment: "My favorite!")
 puts "Stats seeded"
 
 Appointment.create!(date: Date.new(2020, 11, 8), time: Time.now, workout_id: deathleg.id, user_id: mary.id, location: "Garage" )

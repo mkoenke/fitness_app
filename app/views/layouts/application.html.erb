@@ -13,13 +13,14 @@
     <div class="banner">
       <ul>
         <li class="center"><%= image_tag "Str.gif", class: "banner-img" %></li>
-        <li class="left">Today's actions are<br> tomorrow's results</li>
+        <li class="left">Today's actions are tomorrow's...<br> results</li>
         <%# <li class="left"><%= button_to "Learn More", users_path, class: "form-buttons" %></li>
         <li class="right"><%= image_tag "fb-twitter-instagram.jpeg"%></li>
       </ul>
     </div>
 
     <ul class="nav">
+      <li class="left"><%= link_to "Home", root_path %>
       <li class="left"><%= link_to "View Exercises", exercises_path %></li>
       <li class="left"><%= link_to "Create a Workout", new_workout_path %></li>
       <li class="left"><%= link_to "View Existing Workouts", workouts_path %></li>
